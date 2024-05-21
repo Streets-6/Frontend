@@ -1,0 +1,14 @@
+@import 'src/styles/mixins.scss';
+
+.socials {
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.socialIcon {
+  width: 48px;
+  height: 48px;
+  display: block;
+}

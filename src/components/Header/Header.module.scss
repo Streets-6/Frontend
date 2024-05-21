@@ -1,0 +1,37 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 60px calc((100vw - 1320px) / 2);
+  box-sizing: border-box;
+  background-color: $colorBgAccent;
+  color: white;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.logo {
+  & * {
+    display: block;
+  }
+}
+
+.menu {
+  @include reset-list;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menuLink {
+  @include reset-link;
+  @include text-menu-item;
+}

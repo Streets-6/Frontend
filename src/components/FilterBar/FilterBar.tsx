@@ -11,15 +11,17 @@ import { useAppDispatch, useAppSelector } from '../../service/hooks'
 import { getEvents } from '../../service/slices/eventsSlice'
 import { getInfrastructure } from '../../service/slices/infrastructureSlice'
 import {
-  getContentTypeFilter,
-  getDisciplineFilter,
   getIsMapDefaultView,
   getIsOfficePopupOpen,
-  setContentTypeFilter,
-  setDisciplineFilter,
   setIsEventMarkersVisible,
   setIsInfrastructureMarkersVisible,
 } from '../../service/slices/mapSlice'
+import {
+  getContentTypeFilter,
+  getDisciplineFilter,
+  setContentTypeFilter,
+  setDisciplineFilter,
+} from '../../service/slices/filterSlice'
 import {
   getRegions,
   getSelectedRegion,

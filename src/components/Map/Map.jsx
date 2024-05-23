@@ -27,8 +27,6 @@ import {
   getIsMarkerPopupOpen,
   getIsOfficePopupOpen,
   getMap,
-  setContentTypeFilter,
-  setDisciplineFilter,
   setIsEventMarkersVisible,
   setIsInfrastructureMarkersVisible,
   setIsMapHeaderVisible,
@@ -76,8 +74,6 @@ function Map() {
     dispatch(setFilteredRegions(fetchedRegionsData))
     dispatch(setIsInfrastructureMarkersVisible(false))
     dispatch(setIsEventMarkersVisible(false))
-    dispatch(setDisciplineFilter(''))
-    dispatch(setContentTypeFilter('all'))
     map.setMaxBounds(INITIAL_OUTER_BOUNDS)
     map.setMinZoom(INITIAL_ZOOM_LEVEL)
     map.flyToBounds(INITIAL_OUTER_BOUNDS)
@@ -120,9 +116,11 @@ function Map() {
           maxBoundsViscosity={MAX_BOUNDS_VISCOSITY}
           maxBounds={INITIAL_OUTER_BOUNDS}
         >
-          <button className="map__resetButton" onClick={onResetMapClick}>
-            Сбросить фильтры
-          </button>
+          {!isMarkerPopupOpen && (
+            <button className="map__resetButton" onClick={onResetMapClick}>
+              Сбросить фильтры
+            </button>
+          )}
           <MapControl />
           <TileLayer
             detectRetina={true}

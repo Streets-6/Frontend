@@ -1,0 +1,182 @@
+.officePopup {
+  width: 486px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid var(--Black-90, #222);
+  font-family: 'Bahnschrift';
+  &__header {
+    padding: 16px;
+    background-color: var(--Blue, #1e5b9c);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__logo {
+    width: 48px;
+    height: 48px;
+    background-image: url('../../../../assets/images/icons/office.svg');
+  }
+
+  &__title {
+    flex-grow: 1;
+    max-width: 386px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px;
+    margin: 0;
+    color: var(--White, #fff);
+  }
+
+  &__chairmain {
+    padding: 16px 20px;
+    border-top: 1px solid var(--Black-90, #222);
+    display: flex;
+    gap: 40px;
+  }
+
+  &__chairmainAvatar {
+    width: 146px;
+    height: 146px;
+    object-fit: contain;
+  }
+
+  &__jobTitle {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: var(--Radius-border-radius-full, 100px);
+    background: var(--Blue, #1e5b9c);
+
+    color: var(--White, #fff);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 133.333% */
+
+    margin-bottom: 8px;
+  }
+
+  &__name {
+    color: var(--Black-90, #222);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 120% */
+    margin: 0;
+  }
+
+  &__textGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__contact {
+    display: flex;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--Black-90, #222);
+    align-items: center;
+  }
+
+  &__phone {
+    white-space: nowrap;
+  }
+
+  &__phone::before {
+    content: '';
+    background-image: url('../../../../assets/images/icons/phone.svg');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
+
+  &__email::before {
+    content: '';
+    background-image: url('../../../../assets/images/icons/mail.svg');
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    transition: all ease-in-out 0.15s;
+  }
+
+  &__link:hover {
+    opacity: 0.7;
+  }
+
+  &__button {
+    display: inline-flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 16px;
+    background: transparent;
+    border: none;
+    border-top: 1px solid var(--Black-90, #222);
+    color: var(--Black-90, #222);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    cursor: pointer;
+    transition: all ease-in-out 0.15s;
+
+    &:hover {
+      background-color: #d2d1d0;
+    }
+
+    &:last-of-type {
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+  }
+
+  &__buttonText {
+    display: flex;
+    align-items: center;
+  }
+
+  &__buttonText::before {
+    content: '';
+    background-size: 28px 28px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 28px;
+    height: 28px;
+    padding: 4px;
+    margin-right: 4px;
+  }
+
+  &__infrastructure::before {
+    background-image: url('../../../../assets/images/icons/infrastructure_button_icon.svg');
+  }
+
+  &__event::before {
+    background-image: url('../../../../assets/images//icons/event_button_icon.svg');
+  }
+
+  &__markersCount {
+    padding: 5px 12px;
+    background: var(--Blue, #1e5b9c);
+    border-radius: 100px;
+    color: var(--White, #fff);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+  }
+}

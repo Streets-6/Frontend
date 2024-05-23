@@ -1,0 +1,38 @@
+.markerCluster {
+  background-size: 40px 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+
+  &_icon_event {
+    background-image: url('../../../../assets/images/markers/event_marker_icon.svg');
+  }
+  &_icon_infrastructure {
+    background-image: url('../../../../assets/images/markers/infrastructure_marker_icon.svg');
+  }
+  &_icon_mix {
+    background-size: contain;
+    background-image: url('../../../../assets/images/markers/cluster_mix_icon.svg');
+  }
+
+  &__hidden {
+    display: none;
+  }
+}
+
+.markerCluster > div {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  background-color: #6c6c6c;
+  font-size: 15px;
+  border-radius: 50%;
+  justify-content: center;
+}

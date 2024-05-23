@@ -1,0 +1,30 @@
+.option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 12px 16px;
+  box-sizing: border-box;
+
+  border-bottom: 1px solid var(--Black-90, #222);
+
+  cursor: pointer;
+  color: var(--Black-90, #222);
+  font-family: 'Bahnschrift';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  background-color: rgba(255, 255, 255, 1);
+
+  &:last-child {
+    border-bottom: none;
+  }
+  transition: background-color ease-in-out 0.15s;
+}
+
+.option[aria-selected='true'] {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.option:hover {
+  background-color: #d2d1d0;
+}

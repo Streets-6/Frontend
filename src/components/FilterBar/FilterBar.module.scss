@@ -1,6 +1,6 @@
 .filterBar {
   display: flex;
-  width: 1280px;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
 }
@@ -30,7 +30,7 @@
 }
 
 .select {
-  width: 184px;
+  width: 204px;
   z-index: 1100;
 }
 

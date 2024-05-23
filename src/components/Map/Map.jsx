@@ -99,125 +99,120 @@ function Map() {
   }
 
   return (
-    <>
-      <div className="map">
-        <MapHeader
-          data={selectedRegion?.info}
-          isMapHeaderVisible={isMapHeaderVisible && !isMarkerPopupOpen}
-        />
-        <MapContainer
-          center={MAP_CENTER_COORDINATES}
-          zoom={INITIAL_ZOOM_LEVEL}
-          minZoom={INITIAL_ZOOM_LEVEL}
-          maxZoom={MAX_ZOOM_LEVEL}
-          style={{ width: '100%', height: '100%', backgroundColor: 'inherit' }}
-          zoomSnap={ZOOM_SNAP}
-          zoomDelta={ZOOM_DELTA}
-          maxBoundsViscosity={MAX_BOUNDS_VISCOSITY}
-          maxBounds={INITIAL_OUTER_BOUNDS}
-        >
-          {!isMarkerPopupOpen && (
-            <button className="map__resetButton" onClick={onResetMapClick}>
-              Сбросить фильтры
-            </button>
-          )}
-          <MapControl />
-          <TileLayer
-            detectRetina={true}
-            keepBuffer={100}
-            opacity={isMapDefaultView ? 0 : 1}
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-          ></TileLayer>
-          {regionsGeoData.features.map(region => {
-            var coordinates = []
-            if (region.geometry.type === 'Polygon') {
-              coordinates = region.geometry.coordinates[0]?.map(coordinate => [
-                coordinate[1],
-                coordinate[0],
-              ])
-            } else {
-              region.geometry.coordinates.map(array => {
-                const polyCoord = []
-                array[0]?.map(poly => {
-                  polyCoord.push([poly[1], poly[0]])
-                })
-                coordinates.push(polyCoord)
+    <div className="map">
+      <MapHeader
+        data={selectedRegion?.info}
+        isMapHeaderVisible={isMapHeaderVisible && !isMarkerPopupOpen}
+      />
+      <MapContainer
+        center={MAP_CENTER_COORDINATES}
+        zoom={INITIAL_ZOOM_LEVEL}
+        minZoom={INITIAL_ZOOM_LEVEL}
+        maxZoom={MAX_ZOOM_LEVEL}
+        style={{ width: '100%', height: '100%', backgroundColor: 'inherit' }}
+        zoomSnap={ZOOM_SNAP}
+        zoomDelta={ZOOM_DELTA}
+        maxBoundsViscosity={MAX_BOUNDS_VISCOSITY}
+        maxBounds={INITIAL_OUTER_BOUNDS}
+      >
+        {!isMarkerPopupOpen && (
+          <button className="map__resetButton" onClick={onResetMapClick}>
+            Сбросить фильтры
+          </button>
+        )}
+        <MapControl />
+        <TileLayer
+          detectRetina={true}
+          keepBuffer={100}
+          opacity={isMapDefaultView ? 0 : 1}
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+        ></TileLayer>
+        {regionsGeoData.features.map(region => {
+          var coordinates = []
+          if (region.geometry.type === 'Polygon') {
+            coordinates = region.geometry.coordinates[0]?.map(coordinate => [
+              coordinate[1],
+              coordinate[0],
+            ])
+          } else {
+            region.geometry.coordinates.map(array => {
+              const polyCoord = []
+              array[0]?.map(poly => {
+                polyCoord.push([poly[1], poly[0]])
               })
-            }
+              coordinates.push(polyCoord)
+            })
+          }
 
-            const currentRegion = filteredRegionsData.find(
-              item => item.geoId === region.id
-            )
+          const currentRegion = filteredRegionsData.find(
+            item => item.geoId === region.id
+          )
 
-            return (
-              <Polygon
-                key={region.id}
-                pathOptions={{
-                  fillColor: currentRegion ? '#1e5b9c' : '#fff',
-                  fillOpacity: 0.7,
-                  weight: isMapDefaultView
-                    ? 1
-                    : selectedRegion?.info.geoId === region.id
-                    ? 2
-                    : 0,
-                  opacity: 1,
-                  dashArray: 0,
-                  color: isMapDefaultView ? 'black' : '#1e5b9c',
+          return (
+            <Polygon
+              key={region.id}
+              pathOptions={{
+                fillColor: currentRegion ? '#1e5b9c' : '#fff',
+                fillOpacity: 0.7,
+                weight: isMapDefaultView
+                  ? 1
+                  : selectedRegion?.info.geoId === region.id
+                  ? 2
+                  : 0,
+                opacity: 1,
+                dashArray: 0,
+                color: isMapDefaultView ? 'black' : '#1e5b9c',
 
-                  fill: isMapDefaultView,
-                }}
-                positions={coordinates}
-                eventHandlers={{
-                  mouseover: e => {
-                    const layer = e.target
-                    layer.setStyle({
-                      fillOpacity: 1,
-                    })
-                  },
-                  mouseout: e => {
-                    const layer = e.target
-                    layer.setStyle({
-                      fillOpacity: 0.7,
-                    })
-                  },
-                  click: () => {
-                    if (currentRegion && isMapDefaultView) {
-                      dispatch(
-                        setSelectedRegion({
-                          info: currentRegion,
-                          geoData: region.properties,
-                          events: fetchedEventsData.filter(
-                            item => item.regionGeoId === currentRegion.geoId
-                          ),
-                          infrastructure: fetchedInfrastructureData.filter(
-                            item => item.regionGeoId === currentRegion.geoId
-                          ),
-                        })
-                      )
-                      dispatch(setIsOfficePopupOpen(true))
-                    }
-                  },
-                }}
-              >
-                <Tooltip sticky>{region.properties.name}</Tooltip>
-              </Polygon>
-            )
-          })}
-          <MarkerCluster>
-            {isInfrastructureMarkersVisible &&
-              getMarkerElements(
-                selectedRegion.infrastructure,
-                'infrastructure'
-              )}
-            {isEventMarkersVisible &&
-              getMarkerElements(selectedRegion.events, 'event')}
-          </MarkerCluster>
-        </MapContainer>
-        {isOfficePopupOpen && <OfficePopup />}
-        {isMarkerPopupOpen && <MarkerPopup data={popupData} />}
-      </div>
-    </>
+                fill: isMapDefaultView,
+              }}
+              positions={coordinates}
+              eventHandlers={{
+                mouseover: e => {
+                  const layer = e.target
+                  layer.setStyle({
+                    fillOpacity: 1,
+                  })
+                },
+                mouseout: e => {
+                  const layer = e.target
+                  layer.setStyle({
+                    fillOpacity: 0.7,
+                  })
+                },
+                click: () => {
+                  if (currentRegion && isMapDefaultView) {
+                    dispatch(
+                      setSelectedRegion({
+                        info: currentRegion,
+                        geoData: region.properties,
+                        events: fetchedEventsData.filter(
+                          item => item.regionGeoId === currentRegion.geoId
+                        ),
+                        infrastructure: fetchedInfrastructureData.filter(
+                          item => item.regionGeoId === currentRegion.geoId
+                        ),
+                      })
+                    )
+                    dispatch(setIsOfficePopupOpen(true))
+                  }
+                },
+              }}
+            >
+              <Tooltip sticky>{region.properties.name}</Tooltip>
+            </Polygon>
+          )
+        })}
+        <MarkerCluster>
+          {isInfrastructureMarkersVisible &&
+            getMarkerElements(selectedRegion.infrastructure, 'infrastructure')}
+          {isEventMarkersVisible &&
+            getMarkerElements(selectedRegion.events, 'event')}
+        </MarkerCluster>
+      </MapContainer>
+      {isOfficePopupOpen && <OfficePopup />}
+      {isMarkerPopupOpen && <MarkerPopup data={popupData} />}
+    </div>
   )
 }
 

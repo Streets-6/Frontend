@@ -1,15 +1,16 @@
-$map-width: 1280px;
+$map-width: 100%;
 $map-height: 740px;
 .map {
   overflow: hidden;
   width: $map-width;
-  max-width: 1280px;
+  max-width: 1320px;
   height: $map-height;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  border: 1px solid var(--Black-90, #222);
+  border-radius: 4px;
   &__resetButton {
     position: absolute;
     top: 30px;
@@ -37,9 +38,10 @@ $map-height: 740px;
 
   .leaflet-tooltip {
     border: 1px solid var(--Black-90, #222);
-    box-shadow: 0px 97px 27px 0px rgba(0, 0, 0, 0), 0px 62px 25px 0px rgba(0, 0, 0, 0.01),
-      0px 35px 21px 0px rgba(0, 0, 0, 0.02), 0px 16px 16px 0px rgba(0, 0, 0, 0.03),
-      0px 4px 9px 0px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 97px 27px 0px rgba(0, 0, 0, 0),
+      0px 62px 25px 0px rgba(0, 0, 0, 0.01),
+      0px 35px 21px 0px rgba(0, 0, 0, 0.02),
+      0px 16px 16px 0px rgba(0, 0, 0, 0.03), 0px 4px 9px 0px rgba(0, 0, 0, 0.04);
     padding: 12px;
     background-color: #fff;
     color: var(--Black-90, #222);

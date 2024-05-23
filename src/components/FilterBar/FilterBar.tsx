@@ -19,8 +19,10 @@ import {
 import {
   getContentTypeFilter,
   getDisciplineFilter,
+  getPresentationType,
   setContentTypeFilter,
   setDisciplineFilter,
+  setPresentationType,
 } from '../../service/slices/filterSlice'
 import {
   getRegions,
@@ -50,10 +52,9 @@ const FilterBar = () => {
   const isOfficePopupOpen = useAppSelector(getIsOfficePopupOpen)
   const [eventsCount, setEventsCount] = useState(0)
   const [infrastructureCount, setInfrastructureCount] = useState(0)
-
-  const [presentationType, setPresentationType] = useState('map')
+  const presentationType = useAppSelector(getPresentationType)
   const onPresentationTypeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPresentationType(e.target.value)
+    dispatch(setPresentationType(e.target.value))
   }
 
   const filterAllRegions = (targetDiscipline: string, contentType: string) => {

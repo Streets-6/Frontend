@@ -1,0 +1,42 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.container {
+  max-width: 1320px;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  padding-bottom: 121px;
+  background-position: center;
+  background-size: cover;
+  background-image: url('../../assets//images/bgs/cement.jpg');
+}
+
+.serialNumber {
+  @include text-regular-128;
+  font-family: $fontHeader;
+  color: $colorBgAccent;
+  background-color: $colorWhite-1;
+  padding-right: 24px;
+  padding-bottom: 9px;
+  margin-top: -30px;
+}
+
+.title {
+  @include reset-text;
+  @include text-header-h2;
+  max-width: 672px;
+  display: inline-flex;
+  box-sizing: border-box;
+  color: $colorBgAccent;
+  background-color: $colorWhite-1;
+  padding-left: 24px;
+  padding-bottom: 17px;
+  margin-top: -14px;
+
+  &::after {
+    @include rectangle;
+    content: '';
+    margin-top: 14px;
+  }
+}

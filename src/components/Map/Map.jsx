@@ -88,7 +88,7 @@ function Map() {
           data={item}
           eventHandlers={{
             click: () => {
-              setPopupData({ info: item, type: { markerType } })
+              setPopupData({ info: item, type: markerType })
               dispatch(setIsMarkerPopupOpen(true))
               map.flyTo(item.coordinates, MARKER_ZOOM_LEVEL)
             },

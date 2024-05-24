@@ -1,10 +1,11 @@
-import { getEventDates } from '../../../../utils/utils';
-import BasePopup from '../BasePopup/BasePopup';
-import WebCamera from './WebCamera/WebCamera';
-import styles from './MarkerPopup.module.scss';
-import Registration from './Registration/Registration';
+import { getEventDates } from '../../../../utils/utils'
+import BasePopup from '../BasePopup/BasePopup'
+import WebCamera from './WebCamera/WebCamera'
+import styles from './MarkerPopup.module.scss'
+import Registration from './Registration/Registration'
 
 function MarkerPopup({ onClose, data }) {
+  console.log(data)
   return (
     <BasePopup onClose={onClose}>
       <div className={styles.markerPopup}>
@@ -93,18 +94,18 @@ function MarkerPopup({ onClose, data }) {
             />
           </div>
           <ul className={styles.markerPopup__photoList}>
-            {data.info.photo.map((photo) => {
+            {data.info.photo.map(photo => {
               return (
                 <li className={styles.markerPopup__photoListItem} key={photo}>
                   <img className={styles.markerPopup__photo} src={photo} />
                 </li>
-              );
+              )
             })}
           </ul>
         </div>
       </div>
     </BasePopup>
-  );
+  )
 }
 
-export default MarkerPopup;
+export default MarkerPopup

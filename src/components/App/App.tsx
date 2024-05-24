@@ -6,6 +6,7 @@ import { fetchRegionsData } from 'src/service/slices/regionsSlice'
 import { fetchInfrastructureData } from 'src/service/slices/infrastructureSlice'
 import { fetchEventsData } from 'src/service/slices/eventsSlice'
 import StreetsToday from '../StreetsToday/StreetsToday'
+import Promo from '../Promo/Promo'
 // import { Outlet } from 'react-router-dom'
 
 const App = () => {
@@ -21,7 +22,7 @@ const App = () => {
   return (
     <div className={styles.app}>
       <Header />
-      <StreetsToday />
+      <Promo />
       {/* <Outlet /> */}
     </div>
   )

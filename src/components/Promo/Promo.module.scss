@@ -1,0 +1,26 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.promo {
+  max-width: 1440px;
+  height: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.title {
+  @include reset-text;
+  @include text-header-h2;
+  max-width: 680px;
+  color: white;
+  position: absolute;
+  left: 60px;
+  top: 569px;
+  text-shadow: 1.833px 3.667px 7.333px rgba(0, 0, 0, 0.2);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

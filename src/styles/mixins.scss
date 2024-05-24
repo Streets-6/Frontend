@@ -42,7 +42,7 @@
 @mixin text-accent-for-all {
   font-family: $fontHeader;
   font-weight: 500;
-  letter-spacing: .5%;
+  letter-spacing: 0.5%;
   color: inherit;
 }
 
@@ -50,7 +50,7 @@
   @include header-for-all;
   font-size: 48px;
   line-height: 58px;
-  letter-spacing: .5%;
+  letter-spacing: 0.5%;
 }
 
 @mixin text-header-h3 {
@@ -64,7 +64,14 @@
   @include header-for-all;
   font-size: 28px;
   line-height: 34px;
-  letter-spacing: .5%;
+  letter-spacing: 0.5%;
+}
+
+@mixin text-regular-128 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 128px;
+  line-height: 140px;
 }
 
 @mixin text-regular-28 {
@@ -91,4 +98,12 @@
   @include text-accent-for-all;
   font-size: 28px;
   line-height: 34px;
+}
+
+@mixin rectangle {
+  width: 24px;
+  height: 20px;
+  background-color: $colorBgAccent;
+  background-size: 24px 20px;
+  flex-shrink: 0;
 }

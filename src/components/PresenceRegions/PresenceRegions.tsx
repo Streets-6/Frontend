@@ -1,10 +1,10 @@
 import { useAppSelector } from 'src/service/hooks'
 import FilterBar from '../FilterBar/FilterBar'
 import Map from '../Map/Map'
-import styles from './ActivityPresentation.module.scss'
+import styles from './PresenceRegions.module.scss'
 import { getPresentationType } from 'src/service/slices/filterSlice'
 
-const ActivityPresentation = () => {
+const PresenceRegions = () => {
   const presentationType = useAppSelector(getPresentationType)
   return (
     <section className={styles.section}>
@@ -14,4 +14,4 @@ const ActivityPresentation = () => {
   )
 }
 
-export default ActivityPresentation
+export default PresenceRegions

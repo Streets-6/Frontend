@@ -81,6 +81,20 @@
   line-height: 34px;
 }
 
+@mixin text-regular-36 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 43px;
+}
+
+@mixin text-regular-64 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: normal;
+}
+
 @mixin text-bold-40 {
   @include text-primary-for-all;
   font-weight: 700;

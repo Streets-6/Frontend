@@ -45,6 +45,12 @@
   color: inherit;
 }
 
+@mixin logo-for-all {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 @mixin text-header-h2 {
   @include header-for-all;
   font-size: 48px;
@@ -57,6 +63,13 @@
   font-size: 36px;
   line-height: 43px;
   letter-spacing: 0.36px;
+}
+
+@mixin text-header-h3_5 {
+  @include header-for-all;
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: 0.16px;
 }
 
 @mixin text-header-h4 {
@@ -113,6 +126,39 @@
   font-size: 28px;
   line-height: 34px;
   letter-spacing: 0.14px;
+}
+
+@mixin button-rectangle {
+  @include reset-button;
+  color: white;
+  text-align: center;
+  font-family: $fontHeader;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 20px 60px;
+  transition: opacity ease-in-out 0.15s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:disabled {
+    background-color: $colorButtonDisabled;
+    cursor: default;
+  }
+}
+
+@mixin logo-black {
+  @include logo-for-all;
+  background-image: url('../assets//images/logo/streetsLogoBlack.png');
+}
+
+@mixin logo-white {
+  @include logo-for-all;
+  background-image: url('../assets//images/logo/streetsLogoBlack.png');
 }
 
 @mixin rectangle {

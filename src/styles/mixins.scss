@@ -60,6 +60,13 @@
   letter-spacing: 0.24px;
 }
 
+@mixin text-header-h2_5 {
+  @include header-for-all;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0.2px;
+}
+
 @mixin text-header-h3 {
   @include header-for-all;
   font-size: 36px;
@@ -81,11 +88,38 @@
   letter-spacing: 0.14px;
 }
 
+@mixin text-header-h4_5 {
+  @include header-for-all;
+  font-size: 24px;
+  line-height: 29px;
+}
+
 @mixin text-regular-128 {
   @include text-primary-for-all;
   font-weight: 400;
   font-size: 128px;
   line-height: 140px;
+}
+
+@mixin text-regular-18 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+@mixin text-regular-20 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin text-regular-24 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
 }
 
 @mixin text-regular-28 {
@@ -150,6 +184,10 @@
   &:disabled {
     background-color: $colorButtonDisabled;
     cursor: default;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }
 

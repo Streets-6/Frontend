@@ -1,0 +1,47 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.projects {
+  max-width: 1440px;
+  padding: 132px 60px 60px;
+  box-sizing: border-box;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+
+  .title {
+    @include reset-text;
+    @include text-header-h2_5;
+  }
+
+  .subSection {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    .title {
+      @include text-header-h4;
+      line-height: 48px;
+    }
+
+    .list {
+      @include reset-list;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      justify-content: center;
+    }
+
+    .button {
+      background-color: $colorBgPrimary;
+    }
+  }
+
+  .button {
+    @include button-rectangle;
+    background-color: $colorBgSecondary;
+    align-self: center;
+  }
+}

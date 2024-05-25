@@ -13,29 +13,29 @@ const Header = () => {
       </div>
       <ul className={styles.menu}>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <a href="#about" className={styles.menuLink}>
             О нас
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <a href="#" className={styles.menuLink}>
             Дисциплины
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <a href="#" className={styles.menuLink}>
             Инфраструктура
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <a href="#projects" className={styles.menuLink}>
             Инициативы
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <a href="#" className={styles.menuLink}>
             Новости
-          </NavLink>
+          </a>
         </li>
         <li>
           <NavLink to="#" className={styles.menuLink}>

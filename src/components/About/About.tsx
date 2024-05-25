@@ -6,7 +6,7 @@ import membersPhoto from 'src/assets/images/mock/photos/members.jpg'
 
 const About = () => {
   return (
-    <section className={styles.about}>
+    <section className={styles.about} id="about">
       <div className={styles.leftSide}>
         <img
           className={styles.membersPhoto}

@@ -12,7 +12,7 @@ const Projects = () => {
   const firstCurrentProject = useAppSelector(getFirstCurrentProject)
 
   return (
-    <section className={styles.projects}>
+    <section className={styles.projects} id={'projects'}>
       <h2 className={styles.title}>Инициативы</h2>
       <div className={styles.subSection}>
         <h3 className={styles.title}>Уже сделали</h3>

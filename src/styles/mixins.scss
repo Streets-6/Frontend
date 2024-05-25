@@ -208,3 +208,10 @@
   background-size: 24px 20px;
   flex-shrink: 0;
 }
+
+@mixin section-main {
+  max-width: 1440px;
+  padding: 132px 60px 60px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}

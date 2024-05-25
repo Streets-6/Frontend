@@ -33,7 +33,7 @@ const Header = () => {
           </a>
         </li>
         <li>
-          <a href="#" className={styles.menuLink}>
+          <a href="#news" className={styles.menuLink}>
             Новости
           </a>
         </li>

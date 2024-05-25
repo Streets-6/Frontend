@@ -53,3 +53,9 @@ export interface IProjectType {
   description: string
   imageUrl: string
 }
+
+export interface INewsType {
+  id: number
+  title: string
+  imageUrl: string
+}

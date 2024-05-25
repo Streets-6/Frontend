@@ -1,0 +1,21 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.news {
+  @include section-main;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+
+  .title {
+    @include reset-text;
+    @include text-header-h2_5;
+  }
+
+  .button {
+    @include reset-link;
+    @include button-rectangle;
+    background-color: $colorBgPrimary;
+    align-self: center;
+  }
+}

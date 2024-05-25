@@ -6,6 +6,7 @@ import {
   getFirstCurrentProject,
 } from 'src/service/slices/projectsSlice'
 import { VISIBLE_PROJECTS_COUNT } from 'src/utils/constants'
+import { Link } from 'react-router-dom'
 
 const Projects = () => {
   const completedProjects = useAppSelector(getCompletedProjects)
@@ -21,7 +22,9 @@ const Projects = () => {
             <Project data={item} key={item.id} />
           ))}
         </ul>
-        <button className={styles.button}>Все инициативы</button>
+        <Link to="#" className={styles.button}>
+          Все инициативы
+        </Link>
       </div>
       <div className={styles.subSection}>
         <h3 className={styles.title}>Создаем</h3>

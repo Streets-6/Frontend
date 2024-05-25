@@ -2,10 +2,7 @@
 @import 'src/styles/mixins.scss';
 
 .projects {
-  max-width: 1440px;
-  padding: 132px 60px 60px;
-  box-sizing: border-box;
-  margin: 0 auto;
+  @include section-main;
 
   display: flex;
   flex-direction: column;
@@ -35,6 +32,8 @@
     }
 
     .button {
+      @include reset-link;
+      color: white;
       background-color: $colorBgPrimary;
     }
   }

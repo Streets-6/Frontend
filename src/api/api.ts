@@ -5,9 +5,11 @@ import { regionsMockData } from '../utils/mock/regionsMockData'
 import {
   IEventType,
   IInfrastructureType,
+  INewsType,
   IProjectType,
   IRegionType,
 } from './apiTypes'
+import { newsMockData } from 'src/utils/mock/newsMockData'
 
 export const getRegionsData = async () => {
   //regions from server
@@ -38,6 +40,14 @@ export const getProjectsData = async () => {
   //projects from server
   const projectsDataFromServer: Array<IProjectType> = projectsMockData
   const res = await Promise.resolve(projectsDataFromServer)
+
+  return res
+}
+
+export const getNewsData = async () => {
+  //news from server
+  const newsDataFromServer: Array<INewsType> = newsMockData
+  const res = await Promise.resolve(newsDataFromServer)
 
   return res
 }

@@ -19,8 +19,11 @@
 }
 
 .logo {
-  & * {
-    display: block;
+  width: 604px;
+  height: 63px;
+
+  .logoImage {
+    @include logo-white;
   }
 }
 

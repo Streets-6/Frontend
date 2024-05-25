@@ -4,7 +4,8 @@ import svgr from 'vite-plugin-svgr'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(),
+  plugins: [
+    react(),
     svgr({
       svgrOptions: {
         exportType: 'default',
@@ -13,7 +14,7 @@ export default defineConfig({
         titleProp: true,
         svgProps: { role: 'img' },
       },
-      include: ['**/logo/*.svg', '**/components/*.svg']
+      include: ['**/components/*.svg'],
     }),
   ],
   server: {

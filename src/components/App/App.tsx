@@ -6,6 +6,7 @@ import { fetchRegionsData } from 'src/service/slices/regionsSlice'
 import { fetchInfrastructureData } from 'src/service/slices/infrastructureSlice'
 import { fetchEventsData } from 'src/service/slices/eventsSlice'
 import Promo from '../Promo/Promo'
+import About from '../About/About'
 // import { Outlet } from 'react-router-dom'
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
     <div className={styles.app}>
       <Header />
       <Promo />
+      <About />
       {/* <Outlet /> */}
     </div>
   )

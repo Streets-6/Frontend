@@ -1,5 +1,4 @@
 import { Link, NavLink } from 'react-router-dom'
-import Logo from 'src/assets/images/logo/logo.svg'
 import Socials from '../Socials/Socials'
 import styles from './Header.module.scss'
 
@@ -8,7 +7,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.row}>
         <Link to="#" className={styles.logo}>
-          <Logo />
+          <div className={styles.logoImage} />
         </Link>
         <Socials />
       </div>

@@ -32,6 +32,8 @@
     }
 
     .button {
+      @include reset-link;
+      color: white;
       background-color: $colorBgPrimary;
     }
   }

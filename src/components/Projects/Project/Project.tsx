@@ -1,6 +1,7 @@
 import { IProjectType } from 'src/api/apiTypes'
 import styles from './Project.module.scss'
 import { getDateString } from 'src/utils/utils'
+import { Link } from 'react-router-dom'
 
 type TProjectProps = {
   data?: IProjectType
@@ -11,7 +12,7 @@ const Project = (props: TProjectProps) => {
   if (data?.status === 'completed') {
     return (
       <li className={`${styles.project} ${styles.completed}`}>
-        <a className={styles?.link}>
+        <Link to="#" className={styles?.link}>
           <span className={styles.date}>{getDateString(data?.date)}</span>
           <img
             className={styles.image}
@@ -20,7 +21,7 @@ const Project = (props: TProjectProps) => {
           />
           <h4 className={styles.title}>{data?.title}</h4>
           <p className={styles.description}>{data?.description}</p>
-        </a>
+        </Link>
       </li>
     )
   } else if (data?.status === 'current') {
@@ -29,7 +30,9 @@ const Project = (props: TProjectProps) => {
         <img className={styles.image} src={data?.imageUrl} alt={data?.title} />
         <h4 className={styles.title}>{data?.title}</h4>
         <p className={styles?.description}>{data?.description}</p>
-        <button className={styles.button}>Подробнее</button>
+        <Link to="#" className={styles.button}>
+          Подробнее
+        </Link>
       </div>
     )
   }

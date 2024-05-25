@@ -7,6 +7,8 @@ import { fetchInfrastructureData } from 'src/service/slices/infrastructureSlice'
 import { fetchEventsData } from 'src/service/slices/eventsSlice'
 import Promo from '../Promo/Promo'
 import About from '../About/About'
+import Projects from '../Projects/Projects'
+import { fetchProjectsData } from 'src/service/slices/projectsSlice'
 // import { Outlet } from 'react-router-dom'
 
 const App = () => {
@@ -16,6 +18,7 @@ const App = () => {
     dispatch(fetchRegionsData())
     dispatch(fetchInfrastructureData())
     dispatch(fetchEventsData())
+    dispatch(fetchProjectsData())
     // disable lint because we need fetch data only once when app loaded first time
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -24,6 +27,7 @@ const App = () => {
       <Header />
       <Promo />
       <About />
+      <Projects></Projects>
       {/* <Outlet /> */}
     </div>
   )

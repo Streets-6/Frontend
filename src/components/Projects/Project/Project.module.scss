@@ -1,0 +1,70 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.completed {
+  width: 400px;
+  position: relative;
+
+  .link {
+    all: inherit;
+
+    .image {
+      height: 280px;
+    }
+
+    .date {
+      @include text-regular-18;
+      position: absolute;
+      top: 235px;
+      left: 16px;
+      padding: 6px 8px 2px;
+      border-radius: 4px;
+      background-color: $colorBgChip;
+      box-sizing: border-box;
+      color: white;
+      z-index: 10;
+    }
+  }
+}
+
+.current {
+  .image {
+    height: 344px;
+  }
+
+  .description {
+    margin-bottom: 20px;
+  }
+
+  .button {
+    @include button-rectangle;
+    @include text-regular-24;
+    color: white;
+    text-transform: capitalize;
+    background-color: $colorBgChip;
+    padding: 20px;
+  }
+}
+
+.image {
+  width: 100%;
+  margin-bottom: 20px;
+  filter: grayscale(100%);
+  object-fit: cover;
+  object-position: center;
+}
+
+.title {
+  @include reset-text;
+  @include text-header-h4_5;
+  margin-bottom: 8px;
+  font-family: $fontText;
+  font-stretch: semi-condensed;
+  color: black;
+}
+
+.description {
+  @include reset-text;
+  @include text-regular-20;
+  color: $colorTextSecondary;
+}

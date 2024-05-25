@@ -2,10 +2,9 @@
 @import 'src/styles/mixins.scss';
 
 .about {
-  max-width: 1440px;
+  @include section-main;
+  padding: 0;
   display: flex;
-  box-sizing: border-box;
-  margin: 0 auto;
   position: relative;
 
   .leftSide {

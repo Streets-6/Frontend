@@ -1,0 +1,10 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.news {
+  @include section-main;
+  .title {
+    @include reset-text;
+    @include text-header-h2_5;
+  }
+}

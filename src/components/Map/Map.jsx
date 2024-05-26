@@ -2,7 +2,7 @@ import './Map.scss'
 import 'leaflet/dist/leaflet.css'
 import { MapContainer, TileLayer, Polygon, Tooltip } from 'react-leaflet'
 import MapControl from './MapControl/MapControl'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { regionsGeoData } from '../../utils/regionsGeoData'
 import OfficePopup from './Popups/OfficePopup/OfficePopup'
 import CustomMarker from './Markers/CustomMarker/CustomMarker'
@@ -43,6 +43,7 @@ import {
   ZOOM_DELTA,
   ZOOM_SNAP,
 } from '../../utils/constants'
+import { defaultSelectedRegion } from 'src/utils/constDefaultSelectedRegion'
 
 function Map() {
   const dispatch = useAppDispatch()
@@ -50,9 +51,6 @@ function Map() {
   const fetchedRegionsData = useAppSelector(getRegions)
   const selectedRegion = useAppSelector(getSelectedRegion)
   const filteredRegionsData = useAppSelector(getFilteredRegions)
-  useEffect(() => {
-    dispatch(setFilteredRegions(fetchedRegionsData))
-  }, [fetchedRegionsData, dispatch])
 
   const fetchedEventsData = useAppSelector(getEvents)
   const fetchedInfrastructureData = useAppSelector(getInfrastructure)
@@ -70,6 +68,7 @@ function Map() {
   const isEventMarkersVisible = useAppSelector(getIsEventMarkersVisible)
 
   function onResetMapClick() {
+    dispatch(setSelectedRegion(defaultSelectedRegion))
     dispatch(setIsMapHeaderVisible(false))
     dispatch(setFilteredRegions(fetchedRegionsData))
     dispatch(setIsInfrastructureMarkersVisible(false))
@@ -106,14 +105,20 @@ function Map() {
       />
       <MapContainer
         center={MAP_CENTER_COORDINATES}
-        zoom={INITIAL_ZOOM_LEVEL}
+        zoom={
+          selectedRegion?.info.id === 0 ? INITIAL_ZOOM_LEVEL : map.getZoom()
+        }
         minZoom={INITIAL_ZOOM_LEVEL}
         maxZoom={MAX_ZOOM_LEVEL}
         style={{ width: '100%', height: '100%', backgroundColor: 'inherit' }}
         zoomSnap={ZOOM_SNAP}
         zoomDelta={ZOOM_DELTA}
         maxBoundsViscosity={MAX_BOUNDS_VISCOSITY}
-        maxBounds={INITIAL_OUTER_BOUNDS}
+        maxBounds={
+          selectedRegion?.info.id === 0
+            ? INITIAL_OUTER_BOUNDS
+            : selectedRegion?.geoData.bounds
+        }
       >
         {!isMarkerPopupOpen && (
           <button className="map__resetButton" onClick={onResetMapClick}>

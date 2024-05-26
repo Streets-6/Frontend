@@ -15,6 +15,7 @@ import {
   getIsOfficePopupOpen,
   setIsEventMarkersVisible,
   setIsInfrastructureMarkersVisible,
+  setIsMapHeaderVisible,
 } from '../../service/slices/mapSlice'
 import {
   getContentTypeFilter,
@@ -264,7 +265,10 @@ const FilterBar = () => {
             value="list"
             id="list"
             checked={presentationType === 'list'}
-            onChange={onPresentationTypeChange}
+            onChange={e => {
+              dispatch(setIsMapHeaderVisible(false))
+              onPresentationTypeChange(e)
+            }}
           >
             <div className={`${styles.icon} ${styles.listIcon}`}>
               <ListIcon />

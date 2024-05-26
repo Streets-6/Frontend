@@ -1,10 +1,27 @@
-.section {
-  width: 1440px;
-  padding: 60px 60px;
-  box-sizing: border-box;
-  margin: 0 auto;
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.presence {
+  @include section-main;
 
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  .title {
+    @include reset-text;
+    @include text-header-h2_5;
+    color: $colorBgAccent;
+    max-width: 462px;
+  }
+
+  .hint {
+    @include reset-text;
+    @include text-regular-24;
+    line-height: 34px;
+    font-family: $fontHeader;
+    letter-spacing: 0.12px;
+    color: $colorTextSecondary;
+    max-width: 1133px;
+  }
 }

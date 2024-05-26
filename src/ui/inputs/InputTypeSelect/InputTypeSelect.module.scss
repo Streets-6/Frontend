@@ -1,0 +1,87 @@
+.selectWrapper {
+  position: relative;
+  border-radius: 4px;
+}
+
+.arrow {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transition: transform 0.2s ease-in-out, margin-top 0.2s ease-in-out;
+  margin-top: -8px;
+  transform-origin: 50% 7px;
+}
+
+.arrowImage {
+  object-position: center;
+  object-fit: contain;
+}
+
+.placeholder {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 48px;
+  padding: 12px 20px;
+  cursor: pointer;
+  border: 1px;
+  font-family: 'Bahnschrift';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--Black-90, #222);
+  background: rgb(255, 255, 255);
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  transition: background-color ease-in-out 0.15s;
+}
+
+.placeholder[data-status='default'] {
+  border: 1px solid var(--Black-90, #222);
+}
+
+.placeholder[data-status='invalid'] {
+  border: 1px solid rgba(255, 0, 0, 1);
+}
+
+.placeholder[data-selected='true'] {
+  color: rgb(0, 0, 0);
+}
+
+.selectWrapper[data-is-active='true'] .arrow {
+  transform: rotate(180deg);
+  margin-top: -6px;
+}
+
+.selectWrapper[data-is-active='true'] .placeholder {
+  border: 1px solid var(--Black-90, #222);
+}
+
+.selectWrapper:not([data-is-active='true']) .placeholder:not([data-status='invalid']):hover {
+  background-color: #d2d1d0;
+}
+
+.select {
+  border: 1px solid var(--Black-90, #222);
+  border-radius: 4px;
+  overflow: hidden;
+  display: grid;
+  position: absolute;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.selectWrapper[data-mode='cells'] .select {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.selectWrapper[data-mode='cells'] .option {
+  justify-content: center;
+}

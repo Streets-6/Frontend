@@ -1,0 +1,46 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.projects {
+  @include section-main;
+
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+
+  .title {
+    @include reset-text;
+    @include text-header-h2_5;
+  }
+
+  .subSection {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    .title {
+      @include text-header-h4;
+      line-height: 48px;
+    }
+
+    .list {
+      @include reset-list;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      justify-content: center;
+    }
+
+    .button {
+      @include reset-link;
+      color: white;
+      background-color: $colorBgPrimary;
+    }
+  }
+
+  .button {
+    @include button-rectangle;
+    background-color: $colorBgSecondary;
+    align-self: center;
+  }
+}

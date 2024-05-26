@@ -5,8 +5,8 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  gap: 60px;
-  padding: 60px calc((100vw - 1320px) / 2);
+  gap: 30px;
+  padding: 20px calc((100vw - 1320px) / 2);
   box-sizing: border-box;
   background-color: $colorBgAccent;
   color: white;
@@ -20,8 +20,11 @@
 }
 
 .logo {
-  & * {
-    display: block;
+  width: 604px;
+  height: 53px;
+
+  .logoImage {
+    @include logo-white;
   }
 }
 

@@ -1,0 +1,136 @@
+.mapHeader {
+  width: inherit;
+  padding: 24px 60px;
+  background-color: #fff;
+  z-index: 899;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  font-family: 'Bahnschrift';
+  border-bottom: 1px solid var(--Black-90, #222);
+  margin-top: -200px;
+  transition: all ease-in-out 0.5s;
+
+  &_opened {
+    margin-top: 0;
+  }
+
+  &__title {
+    display: inline-flex;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 29px;
+    max-width: 450px;
+    margin: 0;
+    gap: 16px;
+    align-items: center;
+
+    &::before {
+      content: '';
+      width: 48px;
+      height: 48px;
+      background-image: url('../../../assets/images/icons/office_black.svg');
+      background-size: 48px 48px;
+      background-repeat: no-repeat;
+      background-position: center;
+      flex-shrink: 0;
+    }
+  }
+
+  &__chairmain {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__chairmainAvatar {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+
+  &__chairmanInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__jobTitle {
+    max-width: 426px;
+
+    color: var(--Black-90, #222);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+  }
+
+  &__name {
+    color: var(--Dark-Grey, #8a8a8a);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 120% */
+    margin: 0;
+  }
+
+  &__textGroup {
+    display: flex;
+    gap: 24px;
+  }
+
+  &__contact {
+    display: flex;
+    color: var(--Black-90, #222);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    align-items: center;
+  }
+
+  &__phone {
+    white-space: nowrap;
+  }
+
+  &__phone::before {
+    content: '';
+    background-image: url('../../../assets/images/icons/phone.svg');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+  }
+
+  &__email::before {
+    content: '';
+    background-image: url('../../../assets/images/icons/mail.svg');
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+  }
+
+  &__link {
+    color: transparent;
+    font-size: 0;
+    display: flex;
+    text-decoration: none;
+    transition: all ease-in-out 0.15s;
+  }
+
+  &__link::before {
+    content: '';
+    background-image: url('../../../assets/images/icons/vk_circle.svg');
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__link:hover {
+    opacity: 0.7;
+  }
+}

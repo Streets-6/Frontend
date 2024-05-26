@@ -1,5 +1,4 @@
 import { Link, NavLink } from 'react-router-dom'
-import Logo from 'src/assets/images/logo/logo.svg'
 import Socials from '../Socials/Socials'
 import ProfileIcon from 'src/assets/images/icons/profile.svg'
 import styles from './Header.module.scss'
@@ -9,34 +8,25 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.row}>
         <Link to="#" className={styles.logo}>
-          <Logo />
+          <div className={styles.logoImage} />
         </Link>
-        <div className={styles.row}>
-          <Link to="#">
-            <img
-              src={ProfileIcon}
-              alt="Мой профиль"
-              className={styles.profileIcon}
-            />
-          </Link>
-          <Socials />
-        </div>
+        <Socials />
       </div>
       <ul className={styles.menu}>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <a href="#about" className={styles.menuLink}>
             О нас
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <a href="#" className={styles.menuLink}>
             Дисциплины
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <a href="#" className={styles.menuLink}>
             Инфраструктура
-          </NavLink>
+          </a>
         </li>
         <li>
           <NavLink to="#" className={styles.menuLink}>
@@ -44,14 +34,14 @@ const Header = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <a href="#projects" className={styles.menuLink}>
             Инициативы
-          </NavLink>
+          </a>
         </li>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <a href="#news" className={styles.menuLink}>
             Новости
-          </NavLink>
+          </a>
         </li>
         <li>
           <NavLink to="#" className={styles.menuLink}>

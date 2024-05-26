@@ -24,4 +24,35 @@
     color: $colorTextSecondary;
     max-width: 1133px;
   }
+
+  .button {
+    @include reset-button;
+    @include text-regular-24;
+    line-height: 34px;
+    font-family: $fontHeader;
+    letter-spacing: 0.12px;
+    color: $colorTextSecondary;
+    width: fit-content;
+    padding: 17px 0;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+
+    &::before {
+      content: '';
+      align-self: flex-end;
+      width: 43px;
+      height: 23px;
+      background-size: 43px 23px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url('../../assets/images/icons/arrow_next.svg');
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: 'FlipH';
+    }
+  }
 }

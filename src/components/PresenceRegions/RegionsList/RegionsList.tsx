@@ -9,6 +9,8 @@ import { regionsGeoData } from 'src/utils/regionsGeoData'
 import { getEvents } from 'src/service/slices/eventsSlice'
 import { getInfrastructure } from 'src/service/slices/infrastructureSlice'
 import { defaultSelectedRegion } from 'src/utils/constDefaultSelectedRegion'
+import { useEffect } from 'react'
+import SelectedRegion from './SelectedRegion/SelectedRegion'
 
 const RegionsList = () => {
   const dispatch = useAppDispatch()
@@ -16,41 +18,48 @@ const RegionsList = () => {
   const fetchedEventsData = useAppSelector(getEvents)
   const fetchedInfrastructureData = useAppSelector(getInfrastructure)
   const selectedRegion = useAppSelector(getSelectedRegion)
+  useEffect(() => {
+    console.log(selectedRegion)
+  }, [selectedRegion])
 
-  return (
-    <ul className={styles.list}>
-      {filteredRegions.map(region => {
-        const currentRegionGeoData = regionsGeoData.features.find(
-          item => item.id === region.geoId
-        )
-        return (
-          <li
-            key={region.id}
-            className={styles.listItem}
-            onClick={() => {
-              console.log(selectedRegion)
-              dispatch(
-                setSelectedRegion({
-                  info: region,
-                  geoData:
-                    currentRegionGeoData?.properties ||
-                    defaultSelectedRegion.geoData,
-                  events: fetchedEventsData.filter(
-                    item => item.regionGeoId === region.geoId
-                  ),
-                  infrastructure: fetchedInfrastructureData.filter(
-                    item => item.regionGeoId === region.geoId
-                  ),
-                })
-              )
-            }}
-          >
-            {currentRegionGeoData?.properties.name}
-          </li>
-        )
-      })}
-    </ul>
-  )
+  if (selectedRegion.info.id === 0) {
+    return (
+      <ul className={styles.list}>
+        {filteredRegions.map(region => {
+          const currentRegionGeoData = regionsGeoData.features.find(
+            item => item.id === region.geoId
+          )
+          return (
+            <li
+              key={region.id}
+              className={styles.listItem}
+              onClick={() => {
+                console.log(selectedRegion)
+                dispatch(
+                  setSelectedRegion({
+                    info: region,
+                    geoData:
+                      currentRegionGeoData?.properties ||
+                      defaultSelectedRegion.geoData,
+                    events: fetchedEventsData.filter(
+                      item => item.regionGeoId === region.geoId
+                    ),
+                    infrastructure: fetchedInfrastructureData.filter(
+                      item => item.regionGeoId === region.geoId
+                    ),
+                  })
+                )
+              }}
+            >
+              {currentRegionGeoData?.properties.name}
+            </li>
+          )
+        })}
+      </ul>
+    )
+  } else {
+    return <SelectedRegion data={selectedRegion} />
+  }
 }
 
 export default RegionsList

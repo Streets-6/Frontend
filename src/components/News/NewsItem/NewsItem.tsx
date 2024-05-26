@@ -12,7 +12,12 @@ const NewsItem = (props: TNewsItemProps) => {
     <div className={styles.newsItem}>
       <img className={styles.image} src={data?.imageUrl} alt={data?.title} />
       <h4 className={styles.title}>{data?.title}</h4>
-      <Link to="#" className={styles.button}>
+      <Link
+        to="#"
+        className={styles.button}
+        aria-label="Перейти к новости"
+        title="Перейти к новости"
+      >
         Подробнее
       </Link>
     </div>

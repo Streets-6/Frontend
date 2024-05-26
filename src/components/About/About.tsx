@@ -59,7 +59,13 @@ const About = () => {
           </li>
         </ul>
       </div>
-      <button className={styles.button}>Зарегистрироваться</button>
+      <button
+        className={styles.button}
+        aria-label="Зарегистрироваться"
+        title="Зарегистрироваться"
+      >
+        Зарегистрироваться
+      </button>
     </section>
   )
 }

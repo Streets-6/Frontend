@@ -16,7 +16,12 @@ const News = () => {
           <NewsItem data={item} key={item.id} />
         ))}
       </ItemSlider>
-      <Link to="#" className={styles.button}>
+      <Link
+        to="#"
+        className={styles.button}
+        aria-label="Показать все новости"
+        title="Показать все новости"
+      >
         Все новости
       </Link>
     </section>

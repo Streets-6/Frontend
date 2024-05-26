@@ -11,6 +11,7 @@ import Projects from '../Projects/Projects'
 import { fetchProjectsData } from 'src/service/slices/projectsSlice'
 import News from '../News/News'
 import { fetchNewsData } from 'src/service/slices/newsSlice'
+import Summary from '../Summary/Summary'
 // import { Outlet } from 'react-router-dom'
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
       <Header />
       <Promo />
       <About />
+      <Summary />
       <Projects />
       <News />
       {/* <Outlet /> */}

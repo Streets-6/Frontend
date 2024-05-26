@@ -22,7 +22,12 @@ const Projects = () => {
             <Project data={item} key={item.id} />
           ))}
         </ul>
-        <Link to="#" className={styles.button}>
+        <Link
+          to="#"
+          className={styles.button}
+          aria-label="Показать все инициативы"
+          title="Показать все инициативы"
+        >
           Все инициативы
         </Link>
       </div>
@@ -30,7 +35,13 @@ const Projects = () => {
         <h3 className={styles.title}>Создаем</h3>
         <Project data={firstCurrentProject} />
       </div>
-      <button className={styles.button}>Поддержать организацию</button>
+      <button
+        className={styles.button}
+        aria-label="Поддержать организацию"
+        title="Поддержать организацию"
+      >
+        Поддержать организацию
+      </button>
     </section>
   )
 }

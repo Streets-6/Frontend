@@ -1,0 +1,32 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.summary {
+  @include section-main;
+
+  .article {
+    @include text-regular-48;
+    font-family: $fontHeader;
+
+    .text {
+      display: inline-flex;
+      padding: 15px 0 25px;
+
+      &:has(.accent) {
+        padding: 0;
+        width: 100%;
+        align-items: baseline;
+      }
+
+      .accent {
+        flex-grow: 1;
+      }
+    }
+    .accent {
+      display: inline-block;
+      background-color: $colorBgAccent;
+      color: white;
+      padding: 15px 10px 25px;
+    }
+  }
+}

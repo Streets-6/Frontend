@@ -94,13 +94,6 @@
   line-height: 29px;
 }
 
-@mixin text-regular-128 {
-  @include text-primary-for-all;
-  font-weight: 400;
-  font-size: 128px;
-  line-height: 140px;
-}
-
 @mixin text-regular-18 {
   @include text-primary-for-all;
   font-weight: 400;
@@ -136,11 +129,26 @@
   line-height: 43px;
 }
 
+@mixin text-regular-48 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: 0.24px;
+}
+
 @mixin text-regular-64 {
   @include text-primary-for-all;
   font-weight: 400;
   font-size: 64px;
   line-height: normal;
+}
+
+@mixin text-regular-128 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 128px;
+  line-height: 140px;
 }
 
 @mixin text-bold-40 {

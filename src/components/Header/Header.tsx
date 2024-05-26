@@ -1,6 +1,7 @@
 import { Link, NavLink } from 'react-router-dom'
 import Logo from 'src/assets/images/logo/logo.svg'
 import Socials from '../Socials/Socials'
+import ProfileIcon from 'src/assets/images/icons/profile.svg'
 import styles from './Header.module.scss'
 
 const Header = () => {
@@ -10,7 +11,16 @@ const Header = () => {
         <Link to="#" className={styles.logo}>
           <Logo />
         </Link>
-        <Socials />
+        <div className={styles.row}>
+          <Link to="#">
+            <img
+              src={ProfileIcon}
+              alt="Мой профиль"
+              className={styles.profileIcon}
+            />
+          </Link>
+          <Socials />
+        </div>
       </div>
       <ul className={styles.menu}>
         <li>
@@ -26,6 +36,11 @@ const Header = () => {
         <li>
           <NavLink to="#" className={styles.menuLink}>
             Инфраструктура
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="#" className={styles.menuLink}>
+            События
           </NavLink>
         </li>
         <li>

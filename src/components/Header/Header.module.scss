@@ -2,7 +2,7 @@
 @import 'src/styles/mixins.scss';
 
 .header {
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -16,12 +16,19 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .logo {
   & * {
     display: block;
   }
+}
+
+.profileIcon {
+  width: 48px;
+  height: 48px;
+  display: block;
 }
 
 .menu {

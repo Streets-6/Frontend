@@ -12,7 +12,12 @@ const Project = (props: TProjectProps) => {
   if (data?.status === 'completed') {
     return (
       <li className={`${styles.project} ${styles.completed}`}>
-        <Link to="#" className={styles?.link}>
+        <Link
+          to="#"
+          className={styles?.link}
+          aria-label="Перейти на страницу проекта"
+          title="Перейти на страницу проекта"
+        >
           <span className={styles.date}>{getDateString(data?.date)}</span>
           <img
             className={styles.image}
@@ -30,7 +35,12 @@ const Project = (props: TProjectProps) => {
         <img className={styles.image} src={data?.imageUrl} alt={data?.title} />
         <h4 className={styles.title}>{data?.title}</h4>
         <p className={styles?.description}>{data?.description}</p>
-        <Link to="#" className={styles.button}>
+        <Link
+          to="#"
+          className={styles.button}
+          aria-label="Перейти на страницу проекта"
+          title="Перейти на страницу проекта"
+        >
           Подробнее
         </Link>
       </div>

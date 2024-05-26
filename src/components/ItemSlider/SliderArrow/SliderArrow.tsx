@@ -8,7 +8,16 @@ interface ISliderArrowProps {
 const SliderArrow = (props: ISliderArrowProps) => {
   const { onClick, direction } = props
 
-  return <div className={`sliderArrow ${direction}`} onClick={onClick} />
+  return (
+    <button
+      className={`sliderArrow ${direction}`}
+      onClick={onClick}
+      aria-label={
+        direction === 'next' ? 'Прокрутить далее' : 'Прокрутить назад'
+      }
+      title={direction === 'next' ? 'Прокрутить далее' : 'Прокрутить назад'}
+    />
+  )
 }
 
 export default SliderArrow

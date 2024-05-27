@@ -3,8 +3,18 @@ import { NavHashLink } from 'react-router-hash-link'
 import Socials from '../Socials/Socials'
 import ProfileIcon from 'src/assets/images/icons/profile.svg'
 import styles from './Header.module.scss'
+import { useAppDispatch } from 'src/service/hooks'
+import {
+  setAuthModalType,
+  setIsAuthModalOpen,
+} from 'src/service/slices/modalsSlice'
 
 const Header = () => {
+  const dispatch = useAppDispatch()
+  const onProfileIconClick = () => {
+    dispatch(setAuthModalType('login'))
+    dispatch(setIsAuthModalOpen(true))
+  }
   return (
     <header className={styles.header}>
       <div className={styles.row}>
@@ -12,13 +22,16 @@ const Header = () => {
           <div className={styles.logoImage} />
         </Link>
         <div className={styles.row}>
-          <Link to="#">
+          <div>
             <img
               src={ProfileIcon}
               alt="Мой профиль"
               className={styles.profileIcon}
+              onClick={onProfileIconClick}
+              aria-label="Открыть мой профиль"
+              title="Открыть мой профиль"
             />
-          </Link>
+          </div>
           <Socials />
         </div>
       </div>

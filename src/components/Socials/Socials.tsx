@@ -12,6 +12,8 @@ const Socials = () => {
           to="https://www.youtube.com/channel/UCse4y0X9dK0utXKtjwlZ1dg"
           target="blank"
           className={styles.socialLink}
+          aria-label="Открыть канал на YouTube"
+          title="Открыть канал на YouTube"
         >
           <img
             src={YoutubeIcon}
@@ -25,6 +27,8 @@ const Socials = () => {
           to="https://vk.com/streetrf"
           target="blank"
           className={styles.socialLink}
+          aria-label="Открыть группу Вконтакте"
+          title="Открыть группу Вконтакте"
         >
           <img
             src={VkIcon}
@@ -39,6 +43,8 @@ const Socials = () => {
             src={TelegramIcon}
             alt="Наш Telegram-канал"
             className={styles.socialIcon}
+            aria-label="Перейти в Telegram-канал"
+            title="Перейти в Telegram-канал"
           />
         </Link>
       </li>

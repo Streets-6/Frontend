@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { NavHashLink } from 'react-router-hash-link'
 import styles from './Footer.module.scss'
 import Socials from '../Socials/Socials'
 
@@ -8,24 +9,62 @@ const Footer = () => {
       <div className={styles.column}>
         <div className={styles.navigation}>
           <nav>
-            <p className={styles.menuTitle}>Основное</p>
+            <NavHashLink to="/#" className={styles.menuTitle}>
+              Основное
+            </NavHashLink>
             <ul className={styles.menu}>
-              <li>О нас</li>
-              <li>Дисциплины</li>
-              <li>Инфраструктура</li>
-              <li>События</li>
-              <li>Инициативы</li>
-              <li>Новости</li>
-              <li>Официальные документы</li>
+              <li>
+                <NavHashLink to="/#about" className={styles.menuLink}>
+                  О нас
+                </NavHashLink>
+              </li>
+              <li>
+                <NavHashLink to="/#disciplines" className={styles.menuLink}>
+                  Дисциплины
+                </NavHashLink>
+              </li>
+              <li>
+                <NavHashLink to="/#presence" className={styles.menuLink}>
+                  Инфраструктура и события
+                </NavHashLink>
+              </li>
+              <li>
+                <NavHashLink to="/#projects" className={styles.menuLink}>
+                  Инициативы
+                </NavHashLink>
+              </li>
+              <li>
+                <NavHashLink to="/#news" className={styles.menuLink}>
+                  Новости
+                </NavHashLink>
+              </li>
+              <li>
+                <NavHashLink to="/#" className={styles.menuLink}>
+                  Официальные документы
+                </NavHashLink>
+              </li>
             </ul>
           </nav>
           <nav>
-            <p className={styles.menuTitle}>Партнерам</p>
+            <NavHashLink to="/partners#" className={styles.menuTitle}>
+              Партнерам
+            </NavHashLink>
             <ul className={styles.menu}>
-              <li>Направления работы</li>
-              <li>Наши проекты</li>
-              <li>Наши партнеры</li>
-              <li>Заявка для сотрудничества</li>
+              <NavHashLink
+                to="/partners#streets-today"
+                className={styles.menuLink}
+              >
+                Направления работы
+              </NavHashLink>
+              <NavHashLink to="/partners#" className={styles.menuLink}>
+                Наши проекты
+              </NavHashLink>
+              <NavHashLink to="/partners#" className={styles.menuLink}>
+                Наши партнеры
+              </NavHashLink>
+              <NavHashLink to="/partners#" className={styles.menuLink}>
+                Заявка для сотрудничества
+              </NavHashLink>
             </ul>
           </nav>
         </div>

@@ -19,15 +19,16 @@
     @include reset-text;
     @include text-regular-24;
     font-weight: 700;
-    min-height: 58px;
     margin-bottom: 8px;
     color: $colorBgAccent;
   }
+
   .text {
     @include reset-text;
     @include text-regular-20;
     color: $colorTextSecondary;
   }
+
   .address {
     margin-bottom: 6px;
   }
@@ -77,6 +78,7 @@
     justify-content: center;
     align-items: center;
     transition: opacity ease-in-out 0.15s;
+
     & * {
       fill: white;
     }

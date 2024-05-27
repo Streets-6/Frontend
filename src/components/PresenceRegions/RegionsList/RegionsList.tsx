@@ -9,8 +9,8 @@ import { regionsGeoData } from 'src/utils/regionsGeoData'
 import { getEvents } from 'src/service/slices/eventsSlice'
 import { getInfrastructure } from 'src/service/slices/infrastructureSlice'
 import { defaultSelectedRegion } from 'src/utils/constDefaultSelectedRegion'
-import { useEffect } from 'react'
 import SelectedRegion from './SelectedRegion/SelectedRegion'
+import { setIsMapDefaultView } from 'src/service/slices/mapSlice'
 
 const RegionsList = () => {
   const dispatch = useAppDispatch()
@@ -18,9 +18,6 @@ const RegionsList = () => {
   const fetchedEventsData = useAppSelector(getEvents)
   const fetchedInfrastructureData = useAppSelector(getInfrastructure)
   const selectedRegion = useAppSelector(getSelectedRegion)
-  useEffect(() => {
-    console.log(selectedRegion)
-  }, [selectedRegion])
 
   if (selectedRegion.info.id === 0) {
     return (
@@ -34,7 +31,7 @@ const RegionsList = () => {
               key={region.id}
               className={styles.listItem}
               onClick={() => {
-                console.log(selectedRegion)
+                dispatch(setIsMapDefaultView(false))
                 dispatch(
                   setSelectedRegion({
                     info: region,

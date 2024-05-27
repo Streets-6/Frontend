@@ -68,7 +68,6 @@ function Map() {
   const isEventMarkersVisible = useAppSelector(getIsEventMarkersVisible)
 
   function onResetMapClick() {
-    dispatch(setSelectedRegion(defaultSelectedRegion))
     dispatch(setIsMapHeaderVisible(false))
     dispatch(setFilteredRegions(fetchedRegionsData))
     dispatch(setIsInfrastructureMarkersVisible(false))
@@ -76,6 +75,10 @@ function Map() {
     map.setMaxBounds(INITIAL_OUTER_BOUNDS)
     map.setMinZoom(INITIAL_ZOOM_LEVEL)
     map.flyToBounds(INITIAL_OUTER_BOUNDS)
+    // timeout need for data reset after header is gone
+    setTimeout(() => {
+      dispatch(setSelectedRegion(defaultSelectedRegion))
+    }, 200)
   }
 
   const getMarkerElements = (markerDataArray, markerType) => {
@@ -106,7 +109,9 @@ function Map() {
       <MapContainer
         center={MAP_CENTER_COORDINATES}
         zoom={
-          selectedRegion?.info.id === 0 ? INITIAL_ZOOM_LEVEL : map.getZoom()
+          selectedRegion?.info.id === 0 || isMapDefaultView
+            ? INITIAL_ZOOM_LEVEL
+            : map.getZoom()
         }
         minZoom={INITIAL_ZOOM_LEVEL}
         maxZoom={MAX_ZOOM_LEVEL}
@@ -114,11 +119,6 @@ function Map() {
         zoomSnap={ZOOM_SNAP}
         zoomDelta={ZOOM_DELTA}
         maxBoundsViscosity={MAX_BOUNDS_VISCOSITY}
-        maxBounds={
-          selectedRegion?.info.id === 0
-            ? INITIAL_OUTER_BOUNDS
-            : selectedRegion?.geoData.bounds
-        }
       >
         {!isMarkerPopupOpen && (
           <button className="map__resetButton" onClick={onResetMapClick}>

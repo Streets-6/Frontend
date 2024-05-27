@@ -14,6 +14,7 @@ import {
   setIsInfrastructureMarkersVisible,
   setIsMapDefaultView,
   setIsMapHeaderVisible,
+  setIsOfficePopupOpen,
   setMapInstance,
 } from '../../../service/slices/mapSlice'
 import {
@@ -21,20 +22,18 @@ import {
   INITIAL_ZOOM_LEVEL,
 } from '../../../utils/constants'
 import {
-  getPresentationType,
   setContentTypeFilter,
   setDisciplineFilter,
 } from 'src/service/slices/filterSlice'
 import { defaultSelectedRegion } from 'src/utils/constDefaultSelectedRegion'
 
 function MapControl() {
-  const currentPresentationType = useAppSelector(getPresentationType)
-
   const dispatch = useAppDispatch()
   const selectedRegion = useAppSelector(getSelectedRegion)
   const isInfrastructureButtonClicked = useAppSelector(
     getIsInfrastructureButtonClicked
   )
+
   const isEventButtonClicked = useAppSelector(getIsEventButtonClicked)
   const map = useMapEvents({
     moveend: () => {
@@ -66,19 +65,31 @@ function MapControl() {
       }
     },
   })
-
+  console.log()
   useEffect(() => {
     dispatch(setMapInstance(map))
+    dispatch(setIsOfficePopupOpen(false))
+    map.setMaxBounds(INITIAL_OUTER_BOUNDS)
+    if (selectedRegion.info.id !== 0) {
+      if (
+        selectedRegion?.events?.length === 0 &&
+        selectedRegion?.infrastructure?.length === 0
+      ) {
+        dispatch(setIsMapDefaultView(true))
+        dispatch(setIsOfficePopupOpen(true))
+        dispatch(setIsMapHeaderVisible(false))
+        map.setZoom(INITIAL_ZOOM_LEVEL)
+      } else {
+        dispatch(setIsMapHeaderVisible(true))
+        dispatch(setIsMapDefaultView(false))
+
+        map.fitBounds(selectedRegion.geoData.bounds)
+      }
+    }
 
     // disable eslint rule because we need to set map instance only once when component render
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
-  useEffect(() => {
-    if (currentPresentationType === 'map' && selectedRegion?.info.id !== 0) {
-      dispatch(setIsMapHeaderVisible(true))
-    }
-  }, [currentPresentationType, map, selectedRegion?.info.id, dispatch])
 
   return null
 }

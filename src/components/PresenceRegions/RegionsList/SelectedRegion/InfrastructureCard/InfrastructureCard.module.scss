@@ -1,0 +1,84 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.infrastructureCard {
+  width: 312px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    @include reset-text;
+    @include text-regular-24;
+    line-height: 25px;
+    font-weight: 700;
+    min-height: 52px;
+    color: $colorBgAccent;
+  }
+  .text {
+    @include reset-text;
+    @include text-regular-20;
+    color: $colorTextSecondary;
+  }
+  .address {
+    margin-bottom: 6px;
+  }
+
+  .chip {
+    @include text-regular-18;
+    position: absolute;
+    top: 199px;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    width: fit-content;
+    border-radius: 4px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .price {
+    left: 16px;
+  }
+
+  .ageLimit {
+    @include text-regular-18;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: $colorTextSecondary;
+    display: flex;
+    padding: 7px 10px;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  .save {
+    @include reset-button;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity ease-in-out 0.15s;
+    & * {
+      fill: white;
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

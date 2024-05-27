@@ -1,2 +1,54 @@
 @import 'src/styles/variables.scss';
 @import 'src/styles/mixins.scss';
+
+.region {
+  border-top: 1px solid transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  .subsection {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    .title {
+      @include reset-text;
+      @include text-header-h4;
+      color: $colorBgAccent;
+    }
+
+    .list {
+      @include reset-list;
+    }
+    .eventsList {
+      display: grid;
+      grid-template-columns: repeat(3, 424px);
+      gap: 24px;
+    }
+    .infrastructureList {
+      display: grid;
+      grid-template-columns: repeat(4, 312px);
+      column-gap: 24px;
+      row-gap: 48px;
+    }
+
+    .button {
+      @include reset-button;
+      @include button-rectangle;
+      background-color: $colorBgAccent;
+      align-self: center;
+    }
+  }
+
+  .noItems {
+    @include reset-text;
+    @include text-regular-48;
+    color: $colorTextSecondary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+  }
+}

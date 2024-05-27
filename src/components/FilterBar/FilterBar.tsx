@@ -179,7 +179,7 @@ const FilterBar = () => {
       filterSelectedRegion(discipline, contentTypeFilter)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [discipline, contentTypeFilter, isMapDefaultView])
+  }, [discipline, contentTypeFilter, isMapDefaultView, presentationType])
 
   useEffect(() => {
     if (isOfficePopupOpen) {

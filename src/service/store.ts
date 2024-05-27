@@ -6,6 +6,7 @@ import map from './slices/mapSlice'
 import filter from './slices/filterSlice'
 import projects from './slices/projectsSlice'
 import news from './slices/newsSlice'
+import modals from './slices/modalsSlice'
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     filter,
     projects,
     news,
+    modals,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({ serializableCheck: false }),

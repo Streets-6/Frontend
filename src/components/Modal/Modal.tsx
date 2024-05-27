@@ -1,7 +1,5 @@
 import { FC, ReactNode, useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import ModalOverlay from '../ModalOverlay/ModalOverlay'
-// import CloseIcon from 'src/assets/images/icons/close.svg'
 import styles from './Modal.module.scss'
 
 type ModalProps = {
@@ -23,16 +21,15 @@ const Modal: FC<ModalProps> = ({ title, children, onClose }) => {
   }, [])
 
   return createPortal(
-    <>
-      <div className={styles.modal}>
-        <div className={styles.headline}>
-          <h2 className={styles.title}>{title}</h2>
+    <div className={styles.overlay} onClick={onClose}>
+      <div className={styles.container} onClick={e => e.stopPropagation()}>
+        <div className={styles.header}>
+          <h3 className={styles.title}>{title}</h3>
           <button className={styles.close} type="button" onClick={onClose} />
         </div>
         {children}
       </div>
-      <ModalOverlay onClose={onClose} />
-    </>,
+    </div>,
     modalElement
   )
 }

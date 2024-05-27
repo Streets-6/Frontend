@@ -149,16 +149,21 @@
 
 @mixin text-regular-28 {
   @include text-primary-for-all;
-  font-weight: 400;
   font-size: 28px;
   line-height: 34px;
 }
 
 @mixin text-regular-36 {
   @include text-primary-for-all;
-  font-weight: 400;
   font-size: 36px;
   line-height: 43px;
+}
+
+@mixin text-bold-40 {
+  @include text-primary-for-all;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
 }
 
 @mixin text-regular-48 {
@@ -244,6 +249,7 @@
 @mixin rectangle {
   width: 24px;
   height: 20px;
+  display: block;
   background-color: $colorBgAccent;
   background-size: 24px 20px;
   flex-shrink: 0;

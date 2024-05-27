@@ -34,13 +34,8 @@ const Header = () => {
         </li>
         <li>
           <a href="#presence" className={styles.menuLink}>
-            Инфраструктура
+            Инфраструктура и события
           </a>
-        </li>
-        <li>
-          <NavLink to="#" className={styles.menuLink}>
-            События
-          </NavLink>
         </li>
         <li>
           <a href="#projects" className={styles.menuLink}>

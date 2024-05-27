@@ -1,0 +1,52 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.section {
+  @include section-main;
+  background: url('src/assets/images/bg/intro.png') top 132px right 60px / 424px 800px no-repeat;
+  color: $colorBgAccent;
+}
+
+.titleImage {
+  @include reset-text;
+  @include logo-black;
+  width: 600px;
+  height: 52px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  @include reset-text;
+  @include text-title;
+  max-width: 648px;
+  margin-bottom: 190px;
+}
+
+.activities {
+  @include text-bold-40;
+  max-width: 836px;
+}
+
+.listTitle {
+  @include reset-text;
+  color: $colorTextSecondary;
+  padding-bottom: 40px;
+  border-bottom: 1px solid $colorTextSecondary;
+}
+
+.list {
+  @include reset-list;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid $colorTextSecondary;
+
+  &::after {
+    content: '';
+    @include rectangle;
+  }
+}

@@ -1,8 +1,14 @@
 @import 'src/styles/variables.scss';
 @import 'src/styles/mixins.scss';
 
+.section {
+  @include section-main;
+  width: 100%;
+}
+
 .container {
   max-width: 1320px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -19,7 +25,7 @@
   background-color: white;
   padding-right: 24px;
   padding-bottom: 9px;
-  margin-top: -30px;
+  // margin-top: -30px;
 }
 
 .title {
@@ -32,7 +38,7 @@
   background-color: white;
   padding-left: 24px;
   padding-bottom: 17px;
-  margin-top: -14px;
+  // margin-top: -14px;
 
   &::after {
     @include rectangle;

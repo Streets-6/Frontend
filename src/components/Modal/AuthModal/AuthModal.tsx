@@ -14,24 +14,6 @@ import { yupResolver } from '@hookform/resolvers/yup'
 
 type AuthByType = 'email' | 'phone'
 
-// const registrationSchema = yup.object({
-//   firstName: yup.string().required('Введите имя'),
-//   lastName: yup.string().required('Введите фамилию'),
-//   email: yup
-//     .string()
-//     .email('Введен некорректный email адрес')
-//     .required('Введите email'),
-//   phoneNumber: yup
-//     .string()
-//     .required('Введите номер телефона')
-//     .length(10, 'Номер телефона должен состоять из 10 цифр')
-//     .matches(/^\d+$/, 'Номер телефона может содержать только цифры'),
-//   password: yup
-//     .string()
-//     .required('Введите пароль')
-//     .min(8, 'Пароль должен содержать минимум 8 символов'),
-// })
-
 interface IRegistrationByEmail {
   firstName: string
   lastName: string
@@ -131,7 +113,6 @@ const AuthModal = () => {
   }
   const [authBy, setAuthBy] = useState<AuthByType>('email')
   const authModalType = useAppSelector(getAuthModalType)
-  // const [authModalType, setAuthModalType] = useState('registration')
   const [validationSchema, setValidationSchema] = useState<
     yup.ObjectSchema<
       | IRegistrationByEmail

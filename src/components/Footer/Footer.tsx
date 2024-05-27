@@ -2,8 +2,11 @@ import { Link } from 'react-router-dom'
 import { NavHashLink } from 'react-router-hash-link'
 import styles from './Footer.module.scss'
 import Socials from '../Socials/Socials'
+import { useAppDispatch } from 'src/service/hooks'
+import { setIsDonateModalOpen } from 'src/service/slices/modalsSlice'
 
 const Footer = () => {
+  const dispatch = useAppDispatch()
   return (
     <footer className={styles.footer}>
       <div className={styles.column}>
@@ -84,7 +87,12 @@ const Footer = () => {
       <div className={styles.column}>
         <div className={styles.action}>
           <p className={styles.actionTitle}>Готов к реальным действиям?</p>
-          <button className={styles.button}>Поддержать организацию</button>
+          <button
+            className={styles.button}
+            onClick={() => dispatch(setIsDonateModalOpen(true))}
+          >
+            Поддержать организацию
+          </button>
         </div>
         <div className={styles.action}>
           <p className={styles.actionTitle}>Есть предложение по развитию?</p>

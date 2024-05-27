@@ -10,7 +10,16 @@ const Header = () => {
         <Link to="#" className={styles.logo}>
           <div className={styles.logoImage} />
         </Link>
-        <Socials />
+        <div className={styles.row}>
+          <Link to="#">
+            <img
+              src={ProfileIcon}
+              alt="Мой профиль"
+              className={styles.profileIcon}
+            />
+          </Link>
+          <Socials />
+        </div>
       </div>
       <ul className={styles.menu}>
         <li>
@@ -44,7 +53,7 @@ const Header = () => {
           </a>
         </li>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <NavLink to="/partners" className={styles.menuLink}>
             Партнерам
           </NavLink>
         </li>

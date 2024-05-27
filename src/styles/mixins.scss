@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin reset-list {
   padding-left: 0;
   margin: 0;
@@ -30,6 +32,11 @@
   font-family: $fontHeader;
   font-weight: 700;
   color: inherit;
+}
+
+@mixin number-for-all {
+  @include header-for-all;
+  letter-spacing: 0;
 }
 
 @mixin text-primary-for-all {
@@ -94,11 +101,22 @@
   line-height: 29px;
 }
 
-@mixin text-regular-128 {
-  @include text-primary-for-all;
-  font-weight: 400;
+@mixin text-number-xl {
+  @include number-for-all;
   font-size: 128px;
-  line-height: 140px;
+  line-height: 176.3px;
+}
+
+@mixin text-number-m {
+  @include number-for-all;
+  font-size: 64px;
+  line-height: 88px;
+}
+
+@mixin text-number-s {
+  @include number-for-all;
+  font-size: 40px;
+  line-height: 40px;
 }
 
 @mixin text-regular-18 {
@@ -106,6 +124,13 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
+}
+
+@mixin text-regular-16 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
 }
 
 @mixin text-regular-20 {
@@ -169,12 +194,12 @@
   color: white;
   text-align: center;
   font-family: $fontHeader;
+  font-weight: 700;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  line-height: 28px;
   text-transform: uppercase;
   padding: 20px 60px;
+  box-sizing: border-box;
   transition: opacity ease-in-out 0.15s;
 
   &:hover {
@@ -193,12 +218,12 @@
 
 @mixin logo-black {
   @include logo-for-all;
-  background-image: url('../assets//images/logo/streetsLogoBlack.png');
+  background-image: url('../assets/images/logo/streetsLogoBlack.png');
 }
 
 @mixin logo-white {
   @include logo-for-all;
-  background-image: url('../assets//images/logo/streetsLogoWhite.png');
+  background-image: url('../assets/images/logo/streetsLogoWhite.png');
 }
 
 @mixin rectangle {

@@ -1,15 +1,25 @@
 import { Link, NavLink } from 'react-router-dom'
 import Socials from '../Socials/Socials'
+import ProfileIcon from 'src/assets/images/icons/profile.svg'
 import styles from './Header.module.scss'
 
 const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.row}>
-        <Link to="#" className={styles.logo}>
+        <Link to="/" className={styles.logo}>
           <div className={styles.logoImage} />
         </Link>
-        <Socials />
+        <div className={styles.row}>
+          <Link to="#">
+            <img
+              src={ProfileIcon}
+              alt="Мой профиль"
+              className={styles.profileIcon}
+            />
+          </Link>
+          <Socials />
+        </div>
       </div>
       <ul className={styles.menu}>
         <li>
@@ -28,6 +38,11 @@ const Header = () => {
           </a>
         </li>
         <li>
+          <NavLink to="#" className={styles.menuLink}>
+            События
+          </NavLink>
+        </li>
+        <li>
           <a href="#projects" className={styles.menuLink}>
             Инициативы
           </a>
@@ -38,7 +53,7 @@ const Header = () => {
           </a>
         </li>
         <li>
-          <NavLink to="#" className={styles.menuLink}>
+          <NavLink to="/partners" className={styles.menuLink}>
             Партнерам
           </NavLink>
         </li>

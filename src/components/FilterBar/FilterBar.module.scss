@@ -1,0 +1,68 @@
+.filterBar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.radioButtons {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+
+.contentType {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.presentationType {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.selectContainer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.select {
+  width: 204px;
+  z-index: 1100;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.mapIcon {
+  & * {
+    stroke: var(--Black-90, #222);
+  }
+}
+
+.listIcon {
+  & * {
+    fill: var(--Black-90, #222);
+  }
+}
+input[type='radio']:checked ~ * .mapIcon,
+input[type='radio']:disabled ~ * .mapIcon {
+  & * {
+    stroke: var(--White, #fff);
+  }
+}
+
+input[type='radio']:checked ~ * .listIcon,
+input[type='radio']:disabled ~ * .listIcon {
+  & * {
+    fill: var(--White, #fff);
+  }
+}

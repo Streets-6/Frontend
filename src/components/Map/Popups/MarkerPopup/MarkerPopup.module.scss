@@ -1,0 +1,230 @@
+.markerPopup {
+  position: relative;
+  width: 1150px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid var(--Black-90, #222);
+  font-family: 'Bahnschrift';
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+
+  &__about {
+    width: 500px;
+  }
+
+  &__header {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--Black-90, #222);
+    min-height: 84px;
+    box-sizing: border-box;
+  }
+
+  &__title {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #000;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    max-width: 380px;
+
+    &::before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background-size: 40px 40px;
+      background-position: center;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+    }
+
+    &_type_event::before {
+      background-image: url('../../../../assets/images/markers/event_marker_icon.svg');
+    }
+
+    &_type_infrastructure::before {
+      background-image: url('../../../../assets/images/markers/infrastructure_marker_icon.svg');
+    }
+  }
+
+  &__actions {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__actionsItem {
+    display: flex;
+  }
+
+  &__iconButton {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background-color: transparent;
+    background-size: 28px 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all ease-in-out 0.15s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &_type_save {
+      background-image: url('../../../../assets/images/components/save.svg');
+    }
+
+    &_type_share {
+      background-image: url('../../../../assets/images/icons/share.svg');
+    }
+  }
+
+  &__info {
+    margin: 0 0;
+    padding: 0px 16px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 1px solid var(--Black-90, #222);
+    min-height: 93px;
+    box-sizing: border-box;
+
+    &_type_event {
+      min-height: 172px;
+    }
+  }
+
+  &__infoItemGroup {
+    display: flex;
+    gap: 60px;
+  }
+
+  &__infoItem {
+    color: var(--Black-90, #222);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    &_type_dates::before {
+      content: '';
+      background-image: url('../../../../assets/images/icons/calendar.svg');
+      background-repeat: no-repeat;
+      background-size: 20px 22px;
+      width: 20px;
+      height: 22px;
+    }
+
+    &_type_address::before {
+      content: '';
+      background-image: url('../../../../assets/images/icons/location.svg');
+      background-repeat: no-repeat;
+      background-size: 18px 24px;
+      width: 18px;
+      height: 24px;
+    }
+
+    &_type_price::before {
+      content: '';
+      background-image: url('../../../../assets/images/icons/ruble.svg');
+      background-repeat: no-repeat;
+      background-size: 16px 19px;
+      width: 16px;
+      height: 19px;
+    }
+
+    &_type_registration::before {
+      content: '';
+      background-image: url('../../../../assets/images/icons/registration.svg');
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__link {
+    color: transparent;
+    font-size: 0;
+    display: flex;
+    text-decoration: none;
+    transition: all ease-in-out 0.15s;
+  }
+
+  &__link::before {
+    content: '';
+    background-image: url('../../../../assets/images/icons/vk_text.svg');
+    background-repeat: no-repeat;
+    background-size: 120px 21px;
+    width: 120px;
+    height: 21px;
+  }
+
+  &__link:hover {
+    opacity: 0.7;
+  }
+
+  &__media {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__videoWrapper {
+    width: 600px;
+    height: 388px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &__video {
+    border: none;
+
+    &_type_vertical {
+      width: 256.5px;
+      height: 456px;
+    }
+
+    &_type_horizontal {
+      width: 600px;
+      height: 388px;
+    }
+  }
+
+  &__photoList {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__photoListItem {
+    display: flex;
+  }
+
+  &__photo {
+    width: 292px;
+    height: 200px;
+  }
+}

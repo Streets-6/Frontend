@@ -1,0 +1,61 @@
+.registration {
+  padding: 16px;
+  font-family: 'Bahnschrift';
+
+  &__description {
+    color: var(--Black-90, #222);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0 0 16px;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 14px 24px 18px;
+    background: var(--Red, #b73a34);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Benzin';
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    cursor: pointer;
+    transition: all ease-in-out 0.15s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__participants {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__participantsStack {
+    width: 163px;
+    height: 43px;
+  }
+
+  &__participantsCount {
+    color: var(--Light-Text-Secondary, #818c99);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px; /* 100% */
+    letter-spacing: 0.2px;
+    margin: 0;
+  }
+}

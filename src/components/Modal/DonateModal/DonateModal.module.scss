@@ -1,0 +1,96 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.donate {
+  display: flex;
+  flex-direction: column;
+  .form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    margin-bottom: 60px;
+    .inputs {
+      @include reset-fieldset;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 20px;
+
+      .inputGroup {
+        display: flex;
+        gap: 120px;
+      }
+    }
+
+    .error {
+      color: $colorBgSecondary;
+      align-self: center;
+      margin-bottom: 6px;
+      min-height: 34px;
+    }
+
+    .submit {
+      @include button-rectangle;
+      background-color: $colorBgAccent;
+      align-self: center;
+    }
+
+    .hideInput {
+      display: none;
+    }
+  }
+
+  .icons {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-self: center;
+    width: fit-content;
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      display: block;
+      background-repeat: no-repeat;
+      background-size: 48px 48px;
+      background-color: white;
+      background-position: center;
+    }
+
+    .vk {
+      background-image: url('../../../assets/images/icons/vk.svg');
+    }
+
+    .phone {
+      background-image: url('../../../assets/images/icons/phoneWhiteBg.svg');
+    }
+
+    .email {
+      background-image: url('../../../assets/images/icons/mail.svg');
+      background-size: 34px 34px;
+    }
+  }
+
+  .button {
+    @include reset-button;
+    transition: opacity ease-in-out 0.15s;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  .text {
+    @include reset-text;
+    @include text-regular-28;
+    color: $colorBgAccent;
+    text-align: center;
+  }
+
+  .anotherMethods {
+    margin-bottom: 24px;
+  }
+
+  .switchToLogin {
+    color: $colorBgPrimary;
+  }
+}

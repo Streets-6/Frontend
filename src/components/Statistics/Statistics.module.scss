@@ -1,0 +1,123 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.section {
+  @include section-main;
+}
+
+.container {
+  @include reset-list;
+  display: grid;
+  grid-template-columns: 412px 200px 200px 206px 206px;
+  grid-template-rows: 228px 276px;
+  gap: 24px;
+  grid-template-areas:
+    'directions presence infrasctructure events events'
+    'members presence infrasctructure projects programms';
+  color: white;
+}
+
+.directions {
+  grid-area: directions;
+}
+
+.members {
+  grid-area: members;
+  .value {
+    padding-left: 0;
+    padding-bottom: 0;
+    margin-bottom: -18px;
+  }
+}
+
+.events {
+  grid-area: events;
+}
+
+.presence {
+  grid-area: presence;
+  height: 465px;
+  align-self: end;
+}
+
+.infrastructure {
+  grid-area: infrasctructure;
+}
+
+.projects {
+  grid-area: projects;
+}
+
+.programms {
+  grid-area: programms;
+  .value {
+    padding-left: 0;
+  }
+}
+
+.directions,
+.members,
+.events {
+  .text {
+    @include text-regular-36;
+    font-family: $fontHeader;
+  }
+}
+
+.presence,
+.infrastructure,
+.projects,
+.programms {
+  .text {
+    @include text-regular-28;
+    font-family: $fontHeader;
+  }
+}
+
+.directions,
+.members,
+.events,
+.programms {
+  .value {
+    display: block;
+    width: fit-content;
+    background-color: white;
+    color: $colorBgAccent;
+  }
+}
+
+.directions,
+.events {
+  .value {
+    align-self: flex-end;
+    padding-right: 0;
+    margin-right: -3px;
+  }
+}
+
+.value {
+  @include text-number-m;
+  line-height: 64px;
+  font-family: $fontHeader;
+  padding: 0 16px 0;
+}
+
+.item {
+  background-color: $colorBgAccent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 0 16px;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &.members {
+    flex-direction: column-reverse;
+  }
+}
+
+.text {
+  @include reset-text;
+  padding: 0 16px;
+  word-break: break-word;
+}

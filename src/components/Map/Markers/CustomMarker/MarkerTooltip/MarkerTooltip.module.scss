@@ -1,0 +1,36 @@
+.tooltipContainer {
+  display: flex;
+  gap: 12px;
+  max-width: 325px;
+  font-family: 'Bahnschrift';
+  text-align: start;
+  height: min-content;
+}
+
+.tooltipTitle {
+  min-width: 220px;
+  max-width: 250px;
+  margin: 0 0 4px 0;
+  white-space: normal;
+  color: var(--Black-90, #222);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.tooltipInfo {
+  max-width: 250px;
+  margin: 0;
+  overflow-wrap: break-word;
+  color: var(--Dark-Grey, #8a8a8a);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.tooltipIcon {
+  object-fit: contain;
+  object-position: center;
+}

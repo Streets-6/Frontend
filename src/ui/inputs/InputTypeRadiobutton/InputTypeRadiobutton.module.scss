@@ -1,0 +1,87 @@
+.label_container {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  color: black;
+  font-family: 'Bahnschrift';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.original_input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.visible_input {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  border: 1px solid var(--Black-90, #222);
+  border-radius: 100px;
+  background-color: var(--White, #fff);
+  color: var(--Black-90, #222);
+  font-family: 'Bahnschrift';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color ease-in-out 0.15s;
+}
+
+.visible_input:hover {
+  background-color: #d2d1d0;
+}
+
+.original_input:checked + .visible_input {
+  background-color: var(--Black-90, #222);
+  color: var(--White, #fff);
+}
+
+.original_input:focus + .visible_input {
+  outline: 1px solid #d2d1d0;
+}
+
+.original_input:disabled + .visible_input {
+  color: var(--White, #fff);
+  background-color: #d2d1d0;
+  border-color: #d2d1d0;
+  cursor: default;
+}
+
+.count {
+  display: inline-flex;
+  min-width: 30px;
+  padding: 3px 0 1px;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+  background-color: var(--Black-90, #222);
+  color: var(--White, #fff);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.original_input:checked ~ * .count {
+  background-color: var(--White, #fff);
+  color: var(--Black-90, #222);
+}
+
+.original_input:disabled ~ * .count {
+  background-color: var(--White, #fff);
+  color: #d2d1d0;
+}

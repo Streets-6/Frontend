@@ -1,0 +1,38 @@
+.basePopup {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  z-index: 1000;
+  background: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &__container {
+    min-width: 100px;
+    min-height: 100px;
+    background-color: transparent;
+    position: relative;
+    box-shadow: 2px 4px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+  }
+
+  &__closeButton {
+    position: absolute;
+    top: -42px;
+    right: -40px;
+
+    & > button {
+      box-shadow: 1.833px 3.667px 7.333px 0px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin reset-list {
   padding-left: 0;
   margin: 0;
@@ -32,6 +34,11 @@
   color: inherit;
 }
 
+@mixin number-for-all {
+  @include header-for-all;
+  letter-spacing: 0;
+}
+
 @mixin text-primary-for-all {
   font-family: $fontText;
   font-stretch: semi-condensed;
@@ -42,36 +49,144 @@
 @mixin text-accent-for-all {
   font-family: $fontHeader;
   font-weight: 500;
-  letter-spacing: .5%;
   color: inherit;
+}
+
+@mixin logo-for-all {
+  width: inherit;
+  height: inherit;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @mixin text-header-h2 {
   @include header-for-all;
   font-size: 48px;
   line-height: 58px;
-  letter-spacing: .5%;
+  letter-spacing: 0.24px;
+}
+
+@mixin text-header-h2_5 {
+  @include header-for-all;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 0.2px;
 }
 
 @mixin text-header-h3 {
   @include header-for-all;
   font-size: 36px;
   line-height: 43px;
-  letter-spacing: 1%;
+  letter-spacing: 0.36px;
+}
+
+@mixin text-header-h3_5 {
+  @include header-for-all;
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: 0.16px;
 }
 
 @mixin text-header-h4 {
   @include header-for-all;
   font-size: 28px;
   line-height: 34px;
-  letter-spacing: .5%;
+  letter-spacing: 0.14px;
+}
+
+@mixin text-header-h4_5 {
+  @include header-for-all;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+@mixin text-number-xl {
+  @include number-for-all;
+  font-size: 128px;
+  line-height: 1;
+  // line-height: 176.3px;
+}
+
+@mixin text-number-m {
+  @include number-for-all;
+  font-size: 64px;
+  line-height: 88px;
+}
+
+@mixin text-number-s {
+  @include number-for-all;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+@mixin text-regular-18 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+@mixin text-regular-16 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+@mixin text-regular-20 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@mixin text-regular-24 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
 }
 
 @mixin text-regular-28 {
   @include text-primary-for-all;
-  font-weight: 400;
   font-size: 28px;
   line-height: 34px;
+}
+
+@mixin text-regular-36 {
+  @include text-primary-for-all;
+  font-size: 36px;
+  line-height: 43px;
+}
+
+@mixin text-bold-40 {
+  @include text-primary-for-all;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 44px;
+}
+
+@mixin text-regular-48 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 58px;
+  letter-spacing: 0.24px;
+}
+
+@mixin text-regular-64 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: normal;
+}
+
+@mixin text-regular-128 {
+  @include text-primary-for-all;
+  font-weight: 400;
+  font-size: 128px;
+  line-height: 140px;
 }
 
 @mixin text-bold-40 {
@@ -85,10 +200,65 @@
   @include text-accent-for-all;
   font-size: 20px;
   line-height: 28px;
+  letter-spacing: 0.1px;
 }
 
 @mixin text-title {
   @include text-accent-for-all;
   font-size: 28px;
   line-height: 34px;
+  letter-spacing: 0.14px;
+}
+
+@mixin button-rectangle {
+  @include reset-button;
+  color: white;
+  text-align: center;
+  font-family: $fontHeader;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  text-transform: uppercase;
+  padding: 20px 60px;
+  box-sizing: border-box;
+  transition: opacity ease-in-out 0.15s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:disabled {
+    background-color: $colorButtonDisabled;
+    cursor: default;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin logo-black {
+  @include logo-for-all;
+  background-image: url('../assets/images/logo/streetsLogoBlack.png');
+}
+
+@mixin logo-white {
+  @include logo-for-all;
+  background-image: url('../assets/images/logo/streetsLogoWhite.png');
+}
+
+@mixin rectangle {
+  width: 24px;
+  height: 20px;
+  display: block;
+  background-color: $colorBgAccent;
+  background-size: 24px 20px;
+  flex-shrink: 0;
+}
+
+@mixin section-main {
+  max-width: 1440px;
+  padding: 132px 60px 60px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }

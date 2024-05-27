@@ -4,10 +4,18 @@ import FPGLogo from 'src/assets/images/mock/logos/FPG.png'
 import rosmolodezhLogo from 'src/assets/images/mock/logos/rosmolodezh.png'
 import membersPhoto from 'src/assets/images/mock/photos/members.jpg'
 import { useAppDispatch } from 'src/service/hooks'
-import { setIsAuthModalOpen } from 'src/service/slices/modalsSlice'
+import {
+  setAuthModalType,
+  setIsAuthModalOpen,
+} from 'src/service/slices/modalsSlice'
 
 const About = () => {
   const dispatch = useAppDispatch()
+
+  const onRegistrationButtonClick = () => {
+    dispatch(setAuthModalType('registration'))
+    dispatch(setIsAuthModalOpen(true))
+  }
   return (
     <section className={styles.about} id="about">
       <div className={styles.leftSide}>
@@ -66,7 +74,7 @@ const About = () => {
         className={styles.button}
         aria-label="Зарегистрироваться"
         title="Зарегистрироваться"
-        onClick={() => dispatch(setIsAuthModalOpen(true))}
+        onClick={onRegistrationButtonClick}
       >
         Зарегистрироваться
       </button>

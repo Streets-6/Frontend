@@ -12,6 +12,8 @@ import About from 'src/components/About/About'
 import Projects from 'src/components/Projects/Projects'
 import News from 'src/components/News/News'
 import styles from './MainPage.module.scss'
+import Summary from 'src/components/Summary/Summary'
+import PresenceRegions from 'src/components/PresenceRegions/PresenceRegions'
 
 const MainPage = () => {
   const dispatch = useAppDispatch()
@@ -30,6 +32,8 @@ const MainPage = () => {
       <Header />
       <Promo />
       <About />
+      <Summary />
+      <PresenceRegions />
       <Projects />
       <News />
       <Footer />

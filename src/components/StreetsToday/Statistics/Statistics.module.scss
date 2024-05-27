@@ -1,6 +1,10 @@
 @import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 
+.section {
+  @include section-main;
+}
+
 .container {
   @include reset-list;
   display: grid;
@@ -48,7 +52,6 @@
   grid-area: programms;
   .value {
     padding-left: 0;
-    margin-top: -10px;
   }
 }
 
@@ -88,16 +91,15 @@
   .value {
     align-self: flex-end;
     padding-right: 0;
-    margin-top: -10px;
     margin-right: -3px;
   }
 }
 
 .value {
-  @include text-regular-64;
+  @include text-number-m;
   line-height: 64px;
   font-family: $fontHeader;
-  padding: 0 16px 12px;
+  padding: 0 16px 0;
 }
 
 .item {

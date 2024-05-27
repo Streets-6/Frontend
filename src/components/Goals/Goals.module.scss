@@ -1,0 +1,51 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.section {
+  @include section-main;
+  display: flex;
+  gap: 60px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  @include reset-text;
+  @include text-header-h3;
+  max-width: 450px;
+}
+
+.image {
+  width: 600px;
+  height: 336px;
+  display: block;
+}
+
+.list {
+  @include reset-list;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-left: 60px;
+  border-left: 1px solid $colorTextSecondary;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &::before {
+    content: '';
+    @include rectangle;
+  }
+}
+
+.text {
+  @include reset-text;
+  @include text-regular-28;
+}

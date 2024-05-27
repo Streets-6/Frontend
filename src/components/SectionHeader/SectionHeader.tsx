@@ -8,10 +8,12 @@ type TSectionHeaderProps = {
 const SectionHeader = (props: TSectionHeaderProps) => {
   const { serialNumber, title } = props
   return (
-    <div className={styles.container}>
-      <span className={styles.serialNumber}>{serialNumber}:</span>
-      <h2 className={styles.title}>{title}</h2>
-    </div>
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <span className={styles.serialNumber}>{serialNumber}:</span>
+        <h2 className={styles.title}>{title}</h2>
+      </div>
+    </section>
   )
 }
 

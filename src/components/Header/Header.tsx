@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.row}>
-        <Link to="#" className={styles.logo}>
+        <Link to="/" className={styles.logo}>
           <div className={styles.logoImage} />
         </Link>
         <div className={styles.row}>
@@ -33,7 +33,7 @@ const Header = () => {
           </a>
         </li>
         <li>
-          <a href="#" className={styles.menuLink}>
+          <a href="#presence" className={styles.menuLink}>
             Инфраструктура
           </a>
         </li>

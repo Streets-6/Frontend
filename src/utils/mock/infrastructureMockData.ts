@@ -58,7 +58,7 @@ export const infrastructureMockData: Array<IInfrastructureType> = [
     regionGeoId: 81,
     title: 'ФЕНИКС школа уличной культуры, спорта и танца',
     city: 'г. Ухта',
-    address: ', ул. Октябрьская 13',
+    address: 'ул. Октябрьская 13',
     vk: 'https://taplink.cc/fenixkingz',
     video: {
       type: 'vertical',

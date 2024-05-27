@@ -29,7 +29,7 @@ const Footer = () => {
             </ul>
           </nav>
         </div>
-        <Link to="#" className={styles.logo}>
+        <Link to="/" className={styles.logo}>
           <div className={styles.logoImage} />
         </Link>
         <div className={styles.info}>

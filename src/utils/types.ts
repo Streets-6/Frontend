@@ -3,7 +3,7 @@ import { IRegionType, IInfrastructureType, IEventType } from '../api/apiTypes'
 interface IGeoDataType {
   id: string
   name: string
-  bounds: [[number, number], [number, number]]
+  bounds?: number[][]
 }
 
 export interface ISelectedRegionType {

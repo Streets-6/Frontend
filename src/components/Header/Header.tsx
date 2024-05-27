@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
-import { NavHashLink } from 'react-router-hash-link'
+import { genericHashLink } from 'react-router-hash-link'
 import Socials from '../Socials/Socials'
 import ProfileIcon from 'src/assets/images/icons/profile.svg'
 import styles from './Header.module.scss'
@@ -15,6 +15,9 @@ const Header = () => {
     dispatch(setAuthModalType('login'))
     dispatch(setIsAuthModalOpen(true))
   }
+
+  const HashLink = genericHashLink(Link)
+
   return (
     <header className={styles.header}>
       <div className={styles.row}>
@@ -37,29 +40,29 @@ const Header = () => {
       </div>
       <ul className={styles.menu}>
         <li>
-          <NavHashLink to="/#about" className={styles.menuLink}>
+          <HashLink to="/#about" className={styles.menuLink}>
             О нас
-          </NavHashLink>
+          </HashLink>
         </li>
         <li>
-          <NavHashLink to="/#disciplines" className={styles.menuLink}>
+          <HashLink to="/#disciplines" className={styles.menuLink}>
             Дисциплины
-          </NavHashLink>
+          </HashLink>
         </li>
         <li>
-          <NavHashLink to="/#presence" className={styles.menuLink}>
+          <HashLink to="/#presence" className={styles.menuLink}>
             Инфраструктура и события
-          </NavHashLink>
+          </HashLink>
         </li>
         <li>
-          <NavHashLink to="/#projects" className={styles.menuLink}>
+          <HashLink to="/#projects" className={styles.menuLink}>
             Инициативы
-          </NavHashLink>
+          </HashLink>
         </li>
         <li>
-          <NavHashLink to="/#news" className={styles.menuLink}>
+          <HashLink to="/#news" className={styles.menuLink}>
             Новости
-          </NavHashLink>
+          </HashLink>
         </li>
         <li>
           <NavLink to="/partners" className={styles.menuLink}>

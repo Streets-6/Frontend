@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { NavHashLink } from 'react-router-hash-link'
+import { genericHashLink } from 'react-router-hash-link'
 import styles from './Footer.module.scss'
 import Socials from '../Socials/Socials'
 import { useAppDispatch } from 'src/service/hooks'
@@ -7,67 +7,70 @@ import { setIsDonateModalOpen } from 'src/service/slices/modalsSlice'
 
 const Footer = () => {
   const dispatch = useAppDispatch()
+
+  const HashLink = genericHashLink(Link)
+
   return (
     <footer className={styles.footer}>
       <div className={styles.column}>
         <div className={styles.navigation}>
           <nav>
-            <NavHashLink to="/#" className={styles.menuTitle}>
+            <HashLink to="/#" className={styles.menuTitle}>
               Основное
-            </NavHashLink>
+            </HashLink>
             <ul className={styles.menu}>
               <li>
-                <NavHashLink to="/#about" className={styles.menuLink}>
+                <HashLink to="/#about" className={styles.menuLink}>
                   О нас
-                </NavHashLink>
+                </HashLink>
               </li>
               <li>
-                <NavHashLink to="/#disciplines" className={styles.menuLink}>
+                <HashLink to="/#disciplines" className={styles.menuLink}>
                   Дисциплины
-                </NavHashLink>
+                </HashLink>
               </li>
               <li>
-                <NavHashLink to="/#presence" className={styles.menuLink}>
+                <HashLink to="/#presence" className={styles.menuLink}>
                   Инфраструктура и события
-                </NavHashLink>
+                </HashLink>
               </li>
               <li>
-                <NavHashLink to="/#projects" className={styles.menuLink}>
+                <HashLink to="/#projects" className={styles.menuLink}>
                   Инициативы
-                </NavHashLink>
+                </HashLink>
               </li>
               <li>
-                <NavHashLink to="/#news" className={styles.menuLink}>
+                <HashLink to="/#news" className={styles.menuLink}>
                   Новости
-                </NavHashLink>
+                </HashLink>
               </li>
               <li>
-                <NavHashLink to="/#" className={styles.menuLink}>
+                <HashLink to="/#" className={styles.menuLink}>
                   Официальные документы
-                </NavHashLink>
+                </HashLink>
               </li>
             </ul>
           </nav>
           <nav>
-            <NavHashLink to="/partners#" className={styles.menuTitle}>
+            <HashLink to="/partners#" className={styles.menuTitle}>
               Партнерам
-            </NavHashLink>
+            </HashLink>
             <ul className={styles.menu}>
-              <NavHashLink
+              <HashLink
                 to="/partners#streets-today"
                 className={styles.menuLink}
               >
                 Направления работы
-              </NavHashLink>
-              <NavHashLink to="/partners#" className={styles.menuLink}>
+              </HashLink>
+              <HashLink to="/partners#" className={styles.menuLink}>
                 Наши проекты
-              </NavHashLink>
-              <NavHashLink to="/partners#" className={styles.menuLink}>
+              </HashLink>
+              <HashLink to="/partners#" className={styles.menuLink}>
                 Наши партнеры
-              </NavHashLink>
-              <NavHashLink to="/partners#" className={styles.menuLink}>
+              </HashLink>
+              <HashLink to="/partners#" className={styles.menuLink}>
                 Заявка для сотрудничества
-              </NavHashLink>
+              </HashLink>
             </ul>
           </nav>
         </div>

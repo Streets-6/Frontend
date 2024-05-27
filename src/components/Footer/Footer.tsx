@@ -59,7 +59,10 @@ const Footer = () => {
               <NavHashLink to="/partners#" className={styles.menuLink}>
                 Наши проекты
               </NavHashLink>
-              <NavHashLink to="/partners#" className={styles.menuLink}>
+              <NavHashLink
+                to="/partners#our-partners"
+                className={styles.menuLink}
+              >
                 Наши партнеры
               </NavHashLink>
               <NavHashLink to="/partners#" className={styles.menuLink}>

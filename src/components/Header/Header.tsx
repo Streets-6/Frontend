@@ -23,7 +23,7 @@ const Header = () => {
           </a>
         </li>
         <li>
-          <a href="#" className={styles.menuLink}>
+          <a href="#presence" className={styles.menuLink}>
             Инфраструктура
           </a>
         </li>

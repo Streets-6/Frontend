@@ -12,6 +12,7 @@ import { fetchProjectsData } from 'src/service/slices/projectsSlice'
 import News from '../News/News'
 import { fetchNewsData } from 'src/service/slices/newsSlice'
 import Summary from '../Summary/Summary'
+import PresenceRegions from '../PresenceRegions/PresenceRegions'
 // import { Outlet } from 'react-router-dom'
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
       <Promo />
       <About />
       <Summary />
+      <PresenceRegions />
       <Projects />
       <News />
       {/* <Outlet /> */}

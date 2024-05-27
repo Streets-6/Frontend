@@ -1,5 +1,14 @@
-export const getEventDates = (startDate: number, endDate: number): string => {
-  const startDateArray = new Date(startDate)
+export const getEventDates = (
+  startDate: [number, number, number],
+  endDate: [number, number, number]
+): string => {
+  const [startYearNumber, startMonthIndex, startDayNumber] = startDate
+  const [endYearNumber, endMonthIndex, endDayNumber] = endDate
+  const startDateArray = new Date(
+    startYearNumber,
+    startMonthIndex,
+    startDayNumber
+  )
     .toLocaleString('default', {
       day: 'numeric',
       month: 'long',
@@ -7,7 +16,7 @@ export const getEventDates = (startDate: number, endDate: number): string => {
     })
     .split(' ')
 
-  const endDateArray = new Date(endDate)
+  const endDateArray = new Date(endYearNumber, endMonthIndex, endDayNumber)
     .toLocaleString('default', {
       day: 'numeric',
       month: 'long',

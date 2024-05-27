@@ -1,5 +1,6 @@
 import { IDisciplineType } from './types'
 
+// disciplines for select in FilterBar component
 export const disciplines: IDisciplineType[] = [
   { title: 'Street art', value: 'Street art' },
   { title: 'Parkour', value: 'Parkour' },
@@ -14,6 +15,7 @@ export const disciplines: IDisciplineType[] = [
   { title: 'Scoot', value: 'Scoot' },
 ]
 
+//constants for Map component
 export const MAP_CENTER_COORDINATES: number[] = [
   63.46511262786506, 104.30973007984623,
 ]
@@ -29,4 +31,13 @@ export const INITIAL_OUTER_BOUNDS: number[][] = [
   [30.993447828991535, 192.23305316425729],
 ]
 
+// visible completed projects in Projects component
 export const VISIBLE_PROJECTS_COUNT: number = 3
+
+// visible event and increment in SelectedRegion component
+export const DEFAULT_VISIBLE_EVENTS: number = 3
+export const VISIBLE_EVENTS_INCREMENT: number = 3
+
+// visible infrastructure and increment in SelectedRegion component
+export const DEFAULT_VISIBLE_INFRASTRUCTURE: number = 4
+export const VISIBLE_INFRASTRUCTURE_INCREMENT: number = 4

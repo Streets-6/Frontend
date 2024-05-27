@@ -1,0 +1,31 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.list {
+  @include reset-list;
+  padding-bottom: 263px;
+  box-sizing: border-box;
+  height: 743px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  background-image: url('../../../assets/images/bgs/list_bg.png');
+  background-repeat: no-repeat;
+  background-position: center 450px;
+  background-size: 100%;
+
+  .listItem {
+    @include text-regular-20;
+    padding: 6px;
+    width: 300px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color ease-in-out 0.15s;
+
+    &:hover {
+      background-color: $colorButtonDisabled;
+    }
+  }
+}

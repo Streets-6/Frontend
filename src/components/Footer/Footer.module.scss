@@ -23,8 +23,9 @@
 }
 
 .menuTitle {
-  @include reset-text;
+  @include reset-link;
   @include text-regular-28;
+  display: block;
   line-height: 44px;
   margin-bottom: 20px;
 }
@@ -38,6 +39,10 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.menuLink {
+  @include reset-link;
 }
 
 .logo {

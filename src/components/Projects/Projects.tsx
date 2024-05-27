@@ -1,4 +1,4 @@
-import { useAppSelector } from 'src/service/hooks'
+import { useAppDispatch, useAppSelector } from 'src/service/hooks'
 import Project from './Project/Project'
 import styles from './Projects.module.scss'
 import {
@@ -7,11 +7,12 @@ import {
 } from 'src/service/slices/projectsSlice'
 import { VISIBLE_PROJECTS_COUNT } from 'src/utils/constants'
 import { Link } from 'react-router-dom'
+import { setIsDonateModalOpen } from 'src/service/slices/modalsSlice'
 
 const Projects = () => {
   const completedProjects = useAppSelector(getCompletedProjects)
   const firstCurrentProject = useAppSelector(getFirstCurrentProject)
-
+  const dispatch = useAppDispatch()
   return (
     <section className={styles.projects} id={'projects'}>
       <h2 className={styles.title}>Инициативы</h2>
@@ -39,6 +40,7 @@ const Projects = () => {
         className={styles.button}
         aria-label="Поддержать организацию"
         title="Поддержать организацию"
+        onClick={() => dispatch(setIsDonateModalOpen(true))}
       >
         Поддержать организацию
       </button>

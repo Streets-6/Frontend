@@ -2,7 +2,7 @@
 @import 'src/styles/mixins.scss';
 
 .footer {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 60px calc((100vw - 1320px) / 2);
@@ -33,7 +33,8 @@
   @include reset-list;
 }
 
-.menu, .info {
+.menu,
+.info {
   @include text-regular-16;
   display: flex;
   flex-direction: column;

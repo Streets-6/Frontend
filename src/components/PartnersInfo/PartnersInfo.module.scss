@@ -1,0 +1,39 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.section {
+  @include section-main;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 90px;
+  border-top: 1px solid $colorTextSecondary;
+  padding-top: 60px;
+}
+
+.contentBlock {
+  display: flex;
+  gap: 60px;
+}
+
+.listTitle {
+  @include reset-text;
+  @include text-header-h3;
+  white-space: pre-line;
+  flex: 1;
+}
+
+.list {
+  @include reset-list;
+  padding-left: 60px;
+  border-left: 1px solid $colorTextSecondary;
+  flex: 1;
+}
+
+.item {
+  @include text-bold-40;
+  padding: 16px 0;
+  border-bottom: 1px solid $colorTextSecondary;
+}

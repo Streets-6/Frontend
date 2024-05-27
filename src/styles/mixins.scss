@@ -104,7 +104,8 @@
 @mixin text-number-xl {
   @include number-for-all;
   font-size: 128px;
-  line-height: 176.3px;
+  line-height: 1;
+  // line-height: 176.3px;
 }
 
 @mixin text-number-m {

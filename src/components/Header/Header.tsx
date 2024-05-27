@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom'
+import { NavHashLink } from 'react-router-hash-link'
 import Socials from '../Socials/Socials'
 import ProfileIcon from 'src/assets/images/icons/profile.svg'
 import styles from './Header.module.scss'
@@ -36,29 +37,29 @@ const Header = () => {
       </div>
       <ul className={styles.menu}>
         <li>
-          <a href="#about" className={styles.menuLink}>
+          <NavHashLink to="/#about" className={styles.menuLink}>
             О нас
-          </a>
+          </NavHashLink>
         </li>
         <li>
-          <a href="#" className={styles.menuLink}>
+          <NavHashLink to="/#disciplines" className={styles.menuLink}>
             Дисциплины
-          </a>
+          </NavHashLink>
         </li>
         <li>
-          <a href="#presence" className={styles.menuLink}>
+          <NavHashLink to="/#presence" className={styles.menuLink}>
             Инфраструктура и события
-          </a>
+          </NavHashLink>
         </li>
         <li>
-          <a href="#projects" className={styles.menuLink}>
+          <NavHashLink to="/#projects" className={styles.menuLink}>
             Инициативы
-          </a>
+          </NavHashLink>
         </li>
         <li>
-          <a href="#news" className={styles.menuLink}>
+          <NavHashLink to="/#news" className={styles.menuLink}>
             Новости
-          </a>
+          </NavHashLink>
         </li>
         <li>
           <NavLink to="/partners" className={styles.menuLink}>

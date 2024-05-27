@@ -5,7 +5,7 @@ import styles from './StreetsToday.module.scss'
 
 const StreetsToday = () => {
   return (
-    <section className={styles.container}>
+    <section id="streets-today" className={styles.container}>
       <SectionHeader serialNumber={1} title="«Улицы России» сегодня" />
       <Statistics />
       <Goals />

@@ -1,0 +1,58 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.wrapper {
+  display: flex;
+  padding: 12px 0;
+
+  border-bottom: 1px solid $colorBgAccent;
+  box-sizing: border-box;
+  min-width: 210px;
+
+  &:has(.input[aria-invalid='true']) {
+    border-bottom-color: $colorBgSecondary;
+  }
+
+  &:has(.input:required):has(.input:placeholder-shown):before {
+    content: '*';
+    @include text-regular-36;
+    color: $colorBgSecondary;
+  }
+
+  .input {
+    @include text-bold-40;
+    width: calc(100% - 28px - 16px);
+    display: flex;
+    border: none;
+    padding: 0;
+    margin-right: 16px;
+    background-color: transparent;
+    color: $colorBgAccent;
+    flex-grow: 1;
+    &::placeholder {
+      color: $colorTextPlaceholder;
+    }
+
+    &:focus-visible,
+    &:not(:placeholder-shown) {
+      outline: none;
+
+      + .rectangle {
+        background-color: $colorBgAccent;
+      }
+    }
+    &[aria-invalid='true'] {
+      + .rectangle {
+        background-color: $colorBgSecondary;
+      }
+    }
+  }
+
+  .rectangle {
+    @include rectangle;
+    background-color: $colorTextPlaceholder;
+    width: 28px;
+    height: 24px;
+    align-self: center;
+  }
+}

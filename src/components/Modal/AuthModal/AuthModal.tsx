@@ -3,6 +3,7 @@ import Modal from '../Modal'
 import styles from './AuthModal.module.scss'
 import { setIsAuthModalOpen } from 'src/service/slices/modalsSlice'
 import { useState } from 'react'
+import InputTypeText from 'src/ui/inputs/InputTypeText/InputTypeText'
 
 type AuthByType = 'email' | 'phone'
 
@@ -17,14 +18,35 @@ const AuthModal = () => {
       <div className={styles.auth}>
         <form className={styles.form}>
           <fieldset className={styles.inputs}>
-            <input type="text" placeholder="Имя" />
-            <input type="text" placeholder="Фамилия" />
+            <InputTypeText
+              placeholder="Имя"
+              aria-invalid={'false'}
+              type="text"
+            />
+            <InputTypeText
+              placeholder="Фамилия"
+              aria-invalid={'false'}
+              type="text"
+            />
+
             {authBy === 'email' ? (
-              <input type="email" placeholder="Почта" />
+              <InputTypeText
+                placeholder="Почта"
+                aria-invalid={'false'}
+                type="email"
+              />
             ) : (
-              <input type="tel" placeholder="Телефон" />
+              <InputTypeText
+                placeholder="Телефон"
+                aria-invalid={'false'}
+                type="tel"
+              />
             )}
-            <input type="password" placeholder="Пароль" />
+            <InputTypeText
+              placeholder="Пароль"
+              aria-invalid={'false'}
+              type="password"
+            />
           </fieldset>
           <p className={`${styles.text} ${styles.error}`}>текст ошибки</p>
           <input

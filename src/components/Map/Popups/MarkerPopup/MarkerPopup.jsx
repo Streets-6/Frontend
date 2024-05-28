@@ -5,7 +5,6 @@ import styles from './MarkerPopup.module.scss'
 import Registration from './Registration/Registration'
 
 function MarkerPopup({ onClose, data }) {
-  console.log(data)
   return (
     <BasePopup onClose={onClose}>
       <div className={styles.markerPopup}>

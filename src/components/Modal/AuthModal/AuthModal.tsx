@@ -144,7 +144,14 @@ const AuthModal = () => {
       phoneNumber: '',
     },
   })
-  const onSubmit = () => console.log('Вы зарегистрированы')
+  const onSubmit = () => {
+    dispatch(setIsAuthModalOpen(false))
+    alert(
+      authModalType === 'login'
+        ? 'Вы зашли в свой профиль'
+        : 'Вы зарегистрированы'
+    )
+  }
 
   useEffect(() => {
     if (authModalType === 'login') {

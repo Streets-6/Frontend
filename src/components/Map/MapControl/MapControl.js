@@ -65,7 +65,7 @@ function MapControl() {
       }
     },
   })
-  console.log()
+
   useEffect(() => {
     dispatch(setMapInstance(map))
     dispatch(setIsOfficePopupOpen(false))

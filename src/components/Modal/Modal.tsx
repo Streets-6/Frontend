@@ -18,6 +18,8 @@ const Modal: FC<ModalProps> = ({ title, children, onClose }) => {
 
     document.addEventListener('keydown', handleEscape)
     return () => document.removeEventListener('keydown', handleEscape)
+    // disable eslint because we only need add event listener once when modal rendered
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return createPortal(

@@ -46,7 +46,7 @@ const DonateModal = () => {
   })
   const onSubmit = () => {
     dispatch(setIsDonateModalOpen(false))
-    console.log('Спасибо за поддержку')
+    alert('Благодарим за поддержку')
   }
 
   return (

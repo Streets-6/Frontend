@@ -13,7 +13,7 @@ export const defaultSelectedRegion: ISelectedRegionType = {
       phoneNumber: '+70000000000',
       email: 'example@mail.com',
       vk: 'example.com',
-      avatarUrl: 'example.com',
+      avatarUrl: '',
     },
     infrastructureIds: [],
     eventsIds: [],

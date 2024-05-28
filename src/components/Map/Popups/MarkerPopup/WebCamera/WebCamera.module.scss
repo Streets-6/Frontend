@@ -51,6 +51,15 @@
     margin: 0;
   }
 
+  &__streamWrapper {
+    width: 500px;
+    height: 285px;
+    border: none;
+    background-image: url('../../../../../assets/images/mock/webcamposter.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
   &__stream {
     width: 500px;
     height: 285px;

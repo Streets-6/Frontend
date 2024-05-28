@@ -61,7 +61,6 @@ $ npm run dev
 - [react-slick](https://react-slick.neostack.com/)
 - [leaflet](https://leafletjs.com/) (для открытия нужен VPN)
 - [react-leaflet](https://react-leaflet.js.org/)
-  https://www.npmjs.com/package/yup
 
 ## SCSS
 

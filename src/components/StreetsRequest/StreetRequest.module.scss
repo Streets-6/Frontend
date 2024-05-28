@@ -1,0 +1,86 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.streetsRequest {
+  @include section-main;
+  padding: 60px;
+  background-image: url('../../assets/images/bg/cement.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .title {
+    @include reset-text;
+    @include text-header-h3;
+    max-width: 465px;
+    margin-bottom: 120px;
+  }
+
+  .textGroup {
+    display: flex;
+    gap: 16px;
+    .subtitle {
+      @include reset-text;
+      @include text-header-h3;
+      background-color: white;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 25px 60px;
+      box-sizing: border-box;
+      width: 50%;
+      height: inherit;
+      flex-shrink: 0;
+
+      &::before {
+        @include rectangle;
+        content: '';
+        width: 28px;
+        height: 24px;
+        transform: translateY(14px);
+      }
+    }
+
+    .text {
+      @include reset-text;
+      @include text-bold-40;
+    }
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    padding: 75px 60px 60px;
+    background-color: white;
+    .inputs {
+      @include reset-fieldset;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 20px;
+
+      .inputGroup {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 60px;
+        row-gap: 24px;
+      }
+    }
+
+    .error {
+      @include reset-text;
+      @include text-regular-28;
+      text-align: center;
+      color: $colorBgSecondary;
+      align-self: center;
+      margin-bottom: 6px;
+      min-height: 34px;
+    }
+
+    .submit {
+      @include button-rectangle;
+      background-color: $colorBgAccent;
+      align-self: center;
+    }
+  }
+}

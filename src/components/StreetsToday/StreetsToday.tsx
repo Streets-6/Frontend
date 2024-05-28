@@ -1,6 +1,6 @@
 import SectionHeader from '../SectionHeader/SectionHeader'
-import Statistics from '../Statistics/Statistics'
-import Goals from '../Goals/Goals'
+import Statistics from './Statistics/Statistics'
+import Goals from './Goals/Goals'
 
 const StreetsToday = () => {
   return (

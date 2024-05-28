@@ -1,0 +1,109 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.section {
+  @include section-main;
+}
+
+.contentBlock {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  @include reset-text;
+  @include text-header-h3;
+}
+
+.firstTitle {
+  max-width: 560px;
+}
+
+.secondTitle {
+  max-width: 600px;
+}
+
+.projects {
+  @include reset-list;
+  width: 100%;
+}
+
+.project {
+  display: flex;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid $colorTextSecondary;
+  }
+}
+
+.projectNumber {
+  @include reset-text;
+  @include text-number-s;
+  padding-right: 60px;
+}
+
+.projectCard {
+  max-width: 660px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 60px;
+  border-left: 1px solid $colorTextSecondary;
+}
+
+.projectHeader {
+  @include reset-text;
+  @include text-header-h4;
+  margin-bottom: 60px;
+}
+
+.projectDescription {
+  @include reset-text;
+  @include text-regular-28;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 170px;
+
+  &::before {
+    content: url('src/assets/images/icons/arrow_next.svg');
+    padding-top: 8px;
+  }
+}
+
+.projectFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projectStats {
+  &:not(:last-child) {
+    border-right: 1px solid $colorTextSecondary;
+  }
+
+  &:last-child {
+    text-align: right;
+
+    .statsName {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.statsName {
+  @include reset-text;
+  @include text-bold-40;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+
+  &::before {
+    content: '';
+    @include rectangle;
+  }
+}
+
+.statsValue {
+  @include reset-text;
+  @include text-number-s;
+}

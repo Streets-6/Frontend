@@ -50,4 +50,9 @@
 .menuLink {
   @include reset-link;
   @include text-menu-item;
+  transition: opacity ease-in-out 0.15s;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }

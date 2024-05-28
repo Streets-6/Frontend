@@ -65,7 +65,7 @@ const Footer = () => {
               <HashLink to="/partners#" className={styles.menuLink}>
                 Наши проекты
               </HashLink>
-              <HashLink to="/partners#" className={styles.menuLink}>
+              <HashLink to="/partners#our-partners" className={styles.menuLink}>
                 Наши партнеры
               </HashLink>
               <HashLink to="/partners#" className={styles.menuLink}>

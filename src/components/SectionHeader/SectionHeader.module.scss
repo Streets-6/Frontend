@@ -20,12 +20,11 @@
 
 .serialNumber {
   @include text-number-xl;
+  height: 120px;
   font-family: $fontHeader;
   color: $colorBgAccent;
   background-color: white;
   padding-right: 24px;
-  padding-bottom: 9px;
-  // margin-top: -30px;
 }
 
 .title {
@@ -37,8 +36,6 @@
   color: $colorBgAccent;
   background-color: white;
   padding-left: 24px;
-  padding-bottom: 17px;
-  // margin-top: -14px;
 
   &::after {
     @include rectangle;

@@ -13,7 +13,14 @@ export interface ISelectedRegionType {
   events: IEventType[]
 }
 
-export interface IDisciplineType {
+export interface ISelectItemType {
   title: string
   value: string
+}
+
+export interface IDisciplineType {
+  id: number
+  title: string
+  description: string
+  imageUrl: string
 }

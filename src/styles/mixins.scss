@@ -105,7 +105,6 @@
   @include number-for-all;
   font-size: 128px;
   line-height: 1;
-  // line-height: 176.3px;
 }
 
 @mixin text-number-m {
@@ -247,6 +246,7 @@
   background-image: url('../assets/images/logo/streetsLogoWhite.png');
 }
 
+// mixin for small rectangle element that uses in input, titles etc.
 @mixin rectangle {
   width: 24px;
   height: 20px;
@@ -256,9 +256,10 @@
   flex-shrink: 0;
 }
 
+// mixin that set standard sizes and spacing for section
 @mixin section-main {
   max-width: 1440px;
-  padding: 132px 60px 60px;
+  padding: 60px 60px 132px;
   box-sizing: border-box;
   margin: 0 auto;
 }

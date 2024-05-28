@@ -11,6 +11,7 @@ $map-height: 740px;
   justify-content: space-between;
   border: 1px solid var(--Black-90, #222);
   border-radius: 4px;
+
   &__resetButton {
     position: absolute;
     top: 30px;
@@ -26,7 +27,7 @@ $map-height: 740px;
     font-size: 18px;
     font-style: normal;
     font-weight: 700;
-    line-height: 24px; /* 133.333% */
+    line-height: 24px;
     cursor: pointer;
     transition: opacity ease-in-out 0.15s;
     z-index: 1000;

@@ -35,7 +35,7 @@ const StreetRequest = () => {
     },
   })
   const onSubmit = () => {
-    console.log('Благодорим за заявку')
+    alert('Благодорим за заявку')
   }
 
   return (

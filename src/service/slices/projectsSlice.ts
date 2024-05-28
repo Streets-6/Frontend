@@ -48,7 +48,6 @@ const projects = createSlice({
         state.isRequest = false
         state.isSuccess = false
         state.isFailed = true
-        // state.errorMessage = action.error.message;
         console.log(action.error)
       })
   },

@@ -13,8 +13,6 @@ interface IMapStateType {
   isEventMarkersVisible: boolean
   isInfrastructureButtonClicked: boolean
   isEventButtonClicked: boolean
-  // contentTypeFilter: string;
-  // disciplineFilter: string;
 }
 
 const initialState: IMapStateType = {
@@ -26,8 +24,6 @@ const initialState: IMapStateType = {
   isEventMarkersVisible: false,
   isInfrastructureButtonClicked: false,
   isEventButtonClicked: false,
-  // contentTypeFilter: 'all',
-  // disciplineFilter: '',
 }
 
 const map = createSlice({
@@ -67,12 +63,6 @@ const map = createSlice({
     setIsEventButtonClicked: (state, action: PayloadAction<boolean>) => {
       state.isEventButtonClicked = action.payload
     },
-    // setContentTypeFilter: (state, action: PayloadAction<string>) => {
-    //   state.contentTypeFilter = action.payload
-    // },
-    // setDisciplineFilter: (state, action: PayloadAction<string>) => {
-    //   state.disciplineFilter = action.payload
-    // },
   },
 })
 
@@ -86,8 +76,6 @@ export const {
   setIsEventMarkersVisible,
   setIsInfrastructureButtonClicked,
   setIsEventButtonClicked,
-  // setContentTypeFilter,
-  // setDisciplineFilter,
 } = map.actions
 
 export default map.reducer
@@ -109,7 +97,3 @@ export const getIsInfrastructureButtonClicked = (state: RootState) =>
   state.map.isInfrastructureButtonClicked
 export const getIsEventButtonClicked = (state: RootState) =>
   state.map.isEventButtonClicked
-// export const getContentTypeFilter = (state: RootState) =>
-//   state.map.contentTypeFilter
-// export const getDisciplineFilter = (state: RootState) =>
-//   state.map.disciplineFilter

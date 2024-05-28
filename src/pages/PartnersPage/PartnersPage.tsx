@@ -6,6 +6,7 @@ import Partners from 'src/components/Partners/Partners'
 import Contacts from 'src/components/Contacts/Contacts'
 import styles from './PartnersPage.module.scss'
 import StreetRequest from 'src/components/StreetsRequest/StreetRequest'
+import StreetsProjects from 'src/components/StreetsProjects/StreetsProjects'
 
 const PartnersPage = () => {
   return (
@@ -13,6 +14,7 @@ const PartnersPage = () => {
       <Header />
       <Intro />
       <StreetsToday />
+      <StreetsProjects />
       <Partners />
       <StreetRequest />
       <Contacts />

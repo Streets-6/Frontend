@@ -62,13 +62,13 @@ const Footer = () => {
               >
                 Направления работы
               </HashLink>
-              <HashLink to="/partners#" className={styles.menuLink}>
+              <HashLink to="/partners#our-projects" className={styles.menuLink}>
                 Наши проекты
               </HashLink>
               <HashLink to="/partners#our-partners" className={styles.menuLink}>
                 Наши партнеры
               </HashLink>
-              <HashLink to="/partners#" className={styles.menuLink}>
+              <HashLink to="/partners#request" className={styles.menuLink}>
                 Заявка для сотрудничества
               </HashLink>
             </ul>
@@ -99,7 +99,9 @@ const Footer = () => {
         </div>
         <div className={styles.action}>
           <p className={styles.actionTitle}>Есть предложение по развитию?</p>
-          <button className={styles.button}>напиши нам</button>
+          <HashLink to="/partners#request" className={styles.button}>
+            напиши нам
+          </HashLink>
         </div>
         <Socials />
         <p className={styles.copyright}>

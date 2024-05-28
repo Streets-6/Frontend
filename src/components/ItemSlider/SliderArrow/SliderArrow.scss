@@ -12,6 +12,12 @@
   cursor: pointer;
   position: absolute;
   bottom: -153px;
+
+  transition: opacity ease-in-out 0.15s;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 .prev {
   background-image: url('../../../assets//images/icons/arrow_next.svg');

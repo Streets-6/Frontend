@@ -3,7 +3,7 @@ import styles from './StreetsProjects.module.scss'
 
 const StreetsProjects = () => {
   return (
-    <section className={styles.streetsProjects}>
+    <section className={styles.streetsProjects} id="our-projects">
       <SectionHeader serialNumber={2} title="Проекты «Улиц России»" />
       <div className={styles.federal}>
         <h3 className={styles.title}>флагманские федеральные проекты</h3>

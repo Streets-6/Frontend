@@ -92,6 +92,7 @@
 }
 
 .button {
+  @include reset-link;
   @include button-rectangle;
   background-color: $colorBgSecondary;
 }

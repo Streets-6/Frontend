@@ -2,7 +2,7 @@
 
 ## Состав команды фронтенда
 
-- [Елизавета Ананева](https://github.com/lizananeva) Руководитель направления
+- [Елизавета Ананьева-Рященко](https://github.com/lizananeva) Руководитель направления
 - [Владимир Фролов](https://github.com/v37f)
 
 ## Ссылка на приложение
@@ -48,24 +48,34 @@ $ npm run dev
 
 ## Стэк
 
-- HTML/CSS
-- SASS
+- HTML/SCSS
 - JavaScript
 - TypeSctipt
 - ReactJS
-- Redux & Redux Toolkit
+- Redux Toolkit
 - Vite
 - react-router-dom
 - [react-router-hash-link](https://www.npmjs.com/package/react-router-hash-link)
-- react-hook-form
-- yup
+- [react-hook-form](https://react-hook-form.com/)
+- [yup](https://www.npmjs.com/package/yup)
 - [react-slick](https://react-slick.neostack.com/)
 - [leaflet](https://leafletjs.com/) (для открытия нужен VPN)
 - [react-leaflet](https://react-leaflet.js.org/)
+  https://www.npmjs.com/package/yup
+
+## SCSS
+
+Все основные SCSS константы лежат по пути src/styles/variables.scss.
+
+и являются цветовой палитрой приложения. Все цвета взяты из [макета](https://www.figma.com/design/iDfrlV5LkybjlSBrWayVoJ/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-%E2%84%96-6_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%C2%AB%D0%A3%D0%BB%D0%B8%D1%86%D1%8B-%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8%C2%BB?node-id=268-1860&m=dev) Figma UI kit.
+Все основные миксины лежат по пути src/styles/mixins.scss.
+
+начинающиеся с text - различные шрифты на основе Figma UI kit
+начинающиеся с reset - обнуление стандартных стилей
 
 ## Иконки и шрифты
 
-В проекте применялись иконки из [макета](https://www.figma.com/design/iDfrlV5LkybjlSBrWayVoJ/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-%E2%84%96-6_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%C2%AB%D0%A3%D0%BB%D0%B8%D1%86%D1%8B-%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8%C2%BB?node-id=268-1860&m=dev) и шрифты Benzin и Bahnschrift
+В проекте применялись иконки из [макета](https://www.figma.com/design/iDfrlV5LkybjlSBrWayVoJ/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-%E2%84%96-6_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%C2%AB%D0%A3%D0%BB%D0%B8%D1%86%D1%8B-%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8%C2%BB?node-id=268-1860&m=dev) и шрифты [Benzin](https://bestfonts.pro/font/benzin) и [Bahnschrift](https://font.download/font/bahnschrift)
 
 ## Информация о проекте
 

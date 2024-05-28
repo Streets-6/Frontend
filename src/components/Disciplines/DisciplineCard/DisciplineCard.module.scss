@@ -1,0 +1,60 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 1320px;
+  max-height: 677px;
+  overflow: hidden;
+  cursor: pointer;
+
+  .image {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
+
+  .title {
+    @include reset-text;
+    @include text-header-h3_5;
+    width: fit-content;
+    background-color: $colorBorderPrimary;
+    color: $colorBgAccent;
+    padding: 1px 4px 2px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 100;
+    line-height: 38px;
+  }
+
+  .textContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(88, 87, 87, 0.7);
+
+    backdrop-filter: blur(12.5px);
+    transform: translateY(100%);
+    transition: transform 0.4s ease-in-out 0.4s;
+    padding: 92px 40px 15px;
+    box-sizing: border-box;
+
+    .text {
+      @include reset-text;
+      @include text-regular-28;
+      color: white;
+    }
+  }
+
+  &:hover {
+    .textContainer {
+      transform: translateY(0);
+    }
+  }
+}

@@ -1,7 +1,7 @@
-import { IDisciplineType } from './types'
+import { ISelectItemType } from './types'
 
 // disciplines for select in FilterBar component
-export const disciplines: IDisciplineType[] = [
+export const disciplines: ISelectItemType[] = [
   { title: 'Street art', value: 'Street art' },
   { title: 'Parkour', value: 'Parkour' },
   { title: 'Workout', value: 'Workout' },

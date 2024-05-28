@@ -1,0 +1,74 @@
+@import 'src/styles/variables.scss';
+@import 'src/styles/mixins.scss';
+
+.disciplines {
+  @include section-main;
+
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+
+  .title {
+    @include reset-text;
+    @include text-header-h2_5;
+  }
+
+  .list {
+    @include reset-list;
+    display: grid;
+    gap: 60px;
+    grid-template-columns: 481px 347px 372px;
+    grid-template-rows: 235px 356px 204px 243px 677px 356px;
+    grid-template-areas:
+      'workout streetart streetart'
+      'workout parkour rap'
+      'freerun tricking tricking'
+      'breaking tricking tricking'
+      'bmx bmx bmx'
+      'scoot hiphop skate';
+
+    li[data-id='Workout'] {
+      grid-area: workout;
+    }
+
+    li[data-id='Street art'] {
+      grid-area: streetart;
+    }
+
+    li[data-id='Parkour'] {
+      grid-area: parkour;
+    }
+
+    li[data-id='Rap'] {
+      grid-area: rap;
+    }
+
+    li[data-id='Freerun'] {
+      grid-area: freerun;
+    }
+
+    li[data-id='Tricking'] {
+      grid-area: tricking;
+    }
+
+    li[data-id='Breaking'] {
+      grid-area: breaking;
+    }
+
+    li[data-id='BMX'] {
+      grid-area: bmx;
+    }
+
+    li[data-id='Scoot'] {
+      grid-area: scoot;
+    }
+
+    li[data-id='Hip-hop dance'] {
+      grid-area: hiphop;
+    }
+
+    li[data-id='Skateboarding'] {
+      grid-area: skate;
+    }
+  }
+}

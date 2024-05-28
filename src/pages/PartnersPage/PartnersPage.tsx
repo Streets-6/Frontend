@@ -5,6 +5,7 @@ import StreetsToday from 'src/components/StreetsToday/StreetsToday'
 import Partners from 'src/components/Partners/Partners'
 import Contacts from 'src/components/Contacts/Contacts'
 import styles from './PartnersPage.module.scss'
+import StreetRequest from 'src/components/StreetsRequest/StreetRequest'
 
 const PartnersPage = () => {
   return (
@@ -13,6 +14,7 @@ const PartnersPage = () => {
       <Intro />
       <StreetsToday />
       <Partners />
+      <StreetRequest />
       <Contacts />
       <Footer />
     </div>

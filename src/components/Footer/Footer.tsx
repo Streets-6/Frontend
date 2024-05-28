@@ -62,13 +62,13 @@ const Footer = () => {
               >
                 Направления работы
               </HashLink>
-              <HashLink to="/partners#" className={styles.menuLink}>
+              <HashLink to="/partners#our-projects" className={styles.menuLink}>
                 Наши проекты
               </HashLink>
               <HashLink to="/partners#our-partners" className={styles.menuLink}>
                 Наши партнеры
               </HashLink>
-              <HashLink to="/partners#" className={styles.menuLink}>
+              <HashLink to="/partners#request" className={styles.menuLink}>
                 Заявка для сотрудничества
               </HashLink>
             </ul>

@@ -1,5 +1,5 @@
 import SectionHeader from '../SectionHeader/SectionHeader'
-import PartnersInfo from '../PartnersInfo/PartnersInfo'
+import PartnersInfo from './PartnersInfo/PartnersInfo'
 
 const Partners = () => {
   return (

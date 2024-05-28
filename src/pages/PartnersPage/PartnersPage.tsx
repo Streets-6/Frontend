@@ -14,8 +14,8 @@ const PartnersPage = () => {
       <Header />
       <Intro />
       <StreetsToday />
-      <Partners />
       <ProjectsForPartners />
+      <Partners />
       <StreetRequest />
       <Contacts />
       <Footer />

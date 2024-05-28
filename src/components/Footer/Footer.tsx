@@ -99,7 +99,9 @@ const Footer = () => {
         </div>
         <div className={styles.action}>
           <p className={styles.actionTitle}>Есть предложение по развитию?</p>
-          <button className={styles.button}>напиши нам</button>
+          <HashLink to="/partners#request" className={styles.button}>
+            напиши нам
+          </HashLink>
         </div>
         <Socials />
         <p className={styles.copyright}>
